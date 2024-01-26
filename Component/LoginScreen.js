@@ -18,20 +18,15 @@ const LoginScreen = ({ navigation }) => {
   const [mobileNumber, setMobileNumber] = useState('');
   const [loginErrorMessage, setLoginErrorMessage]= useState("")
 
-  const regexTocheckMobileNumbre = /^[0-9]{10}$/;
+  const regexTocheckMobileNumbre = /^[0-9]{10}$/; //Regex to check the valid mobile numberf
   const handleContinuePress =() => {
-   
-
     if (regexTocheckMobileNumbre.test(mobileNumber)) {
       navigation.navigate('OTPScreen'); // Navigate to the OTPScreen
-    } else {
-      setLoginErrorMessage('Please enter a valid phone number');
-    }
+    } 
   }
 
- 
+ //Handle login error 
   useEffect(() => {
-    console.log(regexTocheckMobileNumbre,"regexTocheckMobileNumbre")
     if (!regexTocheckMobileNumbre.test(mobileNumber) && mobileNumber!== "" ) {
       setLoginErrorMessage('Please enter a valid phone number');
     } else{
@@ -48,7 +43,8 @@ const LoginScreen = ({ navigation }) => {
     // Placeholder function for Facebook login
     console.log('Login with Facebook pressed');
   };
-
+ 
+  //Handle button disable
   const isContinueButtonEnabled = !regexTocheckMobileNumbre.test(mobileNumber);
   const dismissKeyboard = () => {
     Keyboard.dismiss();
