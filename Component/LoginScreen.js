@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -16,14 +16,28 @@ import EntypoIcon from 'react-native-vector-icons/Entypo';
 
 const LoginScreen = ({ navigation }) => {
   const [mobileNumber, setMobileNumber] = useState('');
+  const [loginErrorMessage, setLoginErrorMessage]= useState("")
 
-  const handleContinuePress = () => {
-    if (mobileNumber.length === 10) {
+  const regexTocheckMobileNumbre = /^[0-9]{10}$/;
+  const handleContinuePress =() => {
+   
+
+    if (regexTocheckMobileNumbre.test(mobileNumber)) {
       navigation.navigate('OTPScreen'); // Navigate to the OTPScreen
     } else {
-      console.warn('Please enter a valid phone number');
+      setLoginErrorMessage('Please enter a valid phone number');
     }
-  };
+  }
+
+ 
+  useEffect(() => {
+    console.log(regexTocheckMobileNumbre,"regexTocheckMobileNumbre")
+    if (!regexTocheckMobileNumbre.test(mobileNumber) && mobileNumber!== "" ) {
+      setLoginErrorMessage('Please enter a valid phone number');
+    } else{
+      setLoginErrorMessage('');
+    }
+  },[mobileNumber])
 
   const handleGoogleLogin = () => {
     // Placeholder function for Google login
@@ -35,7 +49,7 @@ const LoginScreen = ({ navigation }) => {
     console.log('Login with Facebook pressed');
   };
 
-  const isContinueButtonEnabled = mobileNumber.length !== 10;
+  const isContinueButtonEnabled = !regexTocheckMobileNumbre.test(mobileNumber);
   const dismissKeyboard = () => {
     Keyboard.dismiss();
   };
@@ -65,6 +79,9 @@ const LoginScreen = ({ navigation }) => {
             onChangeText={(text) => setMobileNumber(text)}
           />
         </View>
+      </View>
+      <View>
+         <Text style={styles.loginErrorMsg}>{loginErrorMessage}</Text>
       </View>
 
       <View style={styles.socialLoginContainer}>
@@ -140,7 +157,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   mobileNumberContainer: {
-    marginBottom: 20,
+    marginBottom: 6,
   },
   inputWithTextContainer: {
     position: 'relative',
@@ -161,6 +178,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderRadius: 5,
     fontSize: 16,
+  },
+  loginErrorMsg:{
+     color: "#DF4423",
+     fontSize:14
   },
   socialLoginContainer: {
     alignItems: 'center',
