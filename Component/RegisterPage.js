@@ -77,8 +77,8 @@ const RegisterPage = () => {
 
 const options = [
   {
-    label: 'Homebuilder',
-    icon: 'home',
+    label: 'User',
+    icon: 'user-circle',
     center: 'true',
   },
   {

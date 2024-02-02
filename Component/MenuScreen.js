@@ -97,7 +97,6 @@ const MenuScreen = () => {
       </View>
       <View>
         <Text style={styles.heading}>User</Text>
-      
       <View style={styles.menuBox}>
           {menuItems.map((item, index) => (
             <View key={index}>

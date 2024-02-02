@@ -17,6 +17,8 @@ import Rewards from './Rewards';
 import Support from './Support';
 import About from './About';
 import Settings from './Settings';
+import SearchScreen from './SearchScreen';
+import CardInnerPage from './HomeScreenInnerPage/CardInnerPage'
 
 // const Stack = createStackNavigator();
 const Stack=createNativeStackNavigator();
@@ -86,6 +88,18 @@ const StackScreen = () => {
         <Stack.Screen
           name="About"
           component={About} // Use ImageSlider component 
+         
+        />
+        <Stack.Screen
+          name="SearchScreen"
+          component={SearchScreen} // Use SearchScreen component
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CardInnerPage"
+          component={CardInnerPage} // Use SearchScreen component
+          options={{ headerShown: true }}
+
         />
       </Stack.Navigator>
     
