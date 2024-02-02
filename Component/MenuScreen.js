@@ -21,7 +21,7 @@ const MenuScreen = () => {
       <View style={styles.imageContainer}>
         <Image source={require('../image/image1.jpg')} style={styles.profileImage} resizeMode="cover" />
       </View>
-      <Text style={styles.heading2}>Anwesh Kumar</Text>
+      <Text style={styles.heading2}>User</Text>
 
       <View style={styles.menuBox}>
         {menuItems.map((item, index) => (

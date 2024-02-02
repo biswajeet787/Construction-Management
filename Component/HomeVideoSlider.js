@@ -80,11 +80,8 @@ const HomeVideoSlider = () => {
               height: 200,
               borderBottomRightRadius: 20,
               borderBottomLeftRadius: 20,
-              // borderRadius:15,
-              
-              // borderColor:'#6528F7'
             }}
-            controls
+            // controls
             resizeMode="cover"
           />
           <Text style={{fontSize: 18, textAlign: 'center', color: 'black'}}>
