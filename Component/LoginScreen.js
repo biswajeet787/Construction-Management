@@ -11,8 +11,6 @@ import {
   Keyboard,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
-import EntypoIcon from 'react-native-vector-icons/Entypo';
 
 const LoginScreen = ({ navigation }) => {
   const [mobileNumber, setMobileNumber] = useState('');

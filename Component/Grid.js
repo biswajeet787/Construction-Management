@@ -3,7 +3,7 @@ import { View, FlatList, StyleSheet, Text, TouchableOpacity, ScrollView } from '
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the icon library
 
 const data = [
-  { id: '1', name: 'Concept Design Package', icon: 'home' },
+  { id: '1', name: 'Concept Design', icon: 'home' },
   { id: '2', name: 'Advanced concept Design', icon: 'rocket' },
   { id: '3', name: 'Visualization Packages', icon: 'picture-o' },
   { id: '4', name: '2D Layout Services', icon: 'file-text-o' },

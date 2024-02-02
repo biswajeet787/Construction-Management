@@ -11,6 +11,9 @@ import OTPScreen from './OTPScreen';
 import ImageSlider from './ImageSlider';
 import RegisterPage from './RegisterPage';
 import AllScreen from './AllScreen';
+import SearchScreen from './SearchScreen';
+import CardInnerPage from './HomeScreenInnerPage/CardInnerPage'
+
 
 // const Stack = createStackNavigator();
 const Stack=createNativeStackNavigator();
@@ -53,6 +56,16 @@ const StackScreen = () => {
           name="AllScreen"
           component={AllScreen} // Use ImageSlider component
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SearchScreen"
+          component={SearchScreen} // Use SearchScreen component
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CardInnerPage"
+          component={CardInnerPage} // Use SearchScreen component
+          options={{ headerShown: true }}
         />
       </Stack.Navigator>
     
