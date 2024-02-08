@@ -15,6 +15,8 @@ import PlansScreen from './Plans';
 import StylesScreen from './Styles';
 import VideosScreen from './Videos';
 import ArticlesScreen from './Articles';
+import Expensetrack from './Expensetrack';
+import Experts from './Experts';
 
 // const Stack = createStackNavigator();
 const Stack=createNativeStackNavigator();
@@ -97,6 +99,15 @@ const StackScreen = () => {
           options={{
             headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
             headerTintColor: 'white', // Change header text color
+          }}
+          />
+          <Stack.Screen
+          name="ExpertsScreen"
+          component={Experts} // Use ImageSlider component
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+            
           }}
           />
 
