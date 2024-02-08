@@ -12,7 +12,10 @@ import OrderScreen from './OrderScreen';
 import MenuScreen from './MenuScreen';
 import HomeScreen from './HomeScreen';
 
+
 const Tab = createBottomTabNavigator();
+
+
 
 const AllScreen = () => {
   return (

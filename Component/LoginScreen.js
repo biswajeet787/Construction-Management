@@ -1,18 +1,16 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
   SafeAreaView,
-  Image,
   StyleSheet,
   TouchableWithoutFeedback,
   Keyboard,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
-import EntypoIcon from 'react-native-vector-icons/Entypo';
+
 
 const LoginScreen = ({ navigation }) => {
   const [mobileNumber, setMobileNumber] = useState('');
@@ -24,6 +22,7 @@ const LoginScreen = ({ navigation }) => {
       navigation.navigate('OTPScreen'); // Navigate to the OTPScreen
     } 
   }
+
 
  //Handle login error 
   useEffect(() => {
@@ -90,10 +89,7 @@ const LoginScreen = ({ navigation }) => {
             onPress={handleGoogleLogin}
             style={styles.loginOptionContainer}
           >
-            {/* <Image
-              source={require('../images/google.png')}
-              style={styles.logoImage}
-            /> */}
+            
             
             <Icon name="google" size={24} color="#4285F4" /> 
             <Text style={styles.signinTextGoogle}>
@@ -104,10 +100,7 @@ const LoginScreen = ({ navigation }) => {
             onPress={handleFacebookLogin}
             style={styles.loginOptionContainer}
           >
-            {/* <Image
-              source={require('../images/facebook.png')}
-              style={styles.logoImage}
-            /> */}
+            
 
         <Icon name="facebook-square" size={24} color="#3b5998" />
         <Text style={styles.signinTextFacebook}>
@@ -188,6 +181,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
   },
+
   signinTextGoogle:{marginLeft:10,fontWeight:'bold',color:'#4285F4'},
   signinTextFacebook:{marginLeft:10,fontWeight:'bold',color:'#3b5998'},
   logoImage: {

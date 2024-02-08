@@ -3,6 +3,7 @@ import {TouchableOpacity, StyleSheet, View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // You can replace FontAwesome with the desired icon set
 
+
 const RegisterPage = () => {
   const [selected, setSelected] = useState(null);
   const navigation = useNavigation();
@@ -77,8 +78,8 @@ const RegisterPage = () => {
 
 const options = [
   {
-    label: 'Homebuilder',
-    icon: 'home',
+    label: 'User',
+    icon: 'user-circle',
     center: 'true',
   },
   {

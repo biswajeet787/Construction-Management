@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-// import AuthStack from './components/AuthStack';
+//import AuthStack from './components/AuthStack';
 // import MainTabs from './components/MainTabs';
 import AllScreen from './Component/AllScreen';
 import StackScreen from './Component/StackScreen';
@@ -14,5 +14,6 @@ const App = () => {
     </NavigationContainer>
   );
 };
+
 
 export default App;
