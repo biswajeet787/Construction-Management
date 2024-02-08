@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     flex: 1,
+    
+    
    
   },
   savedItem: {
@@ -48,10 +50,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 20,
     paddingHorizontal: 20,
-    borderWidth:5,
+    borderWidth:8,
     margin:8,
     borderRadius:10,
     borderColor:'#F6F6F6',
+    
+   
     // borderBottomWidth: 1,
     // borderBottomColor: '#D0C0E5',
   },
