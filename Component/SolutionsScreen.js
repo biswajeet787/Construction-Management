@@ -13,6 +13,9 @@ import AntiTermite from './AntiTermite';
 import RainwaterHarvesting from './RainwaterHarvesting';
 import SolarService from './SolarService';
 import ConstructionAdvisory from './ConstructionAdvisory';
+import DesignIdeas from './DesignIdeas';
+import FinanceService from './FinanceService';
+import VaastuService from './VaastuService';
 
 
 
@@ -28,8 +31,8 @@ const SolutionsScreen = ({ navigation }) => {
     { id: '4', name: '2D Layout Services', icon: 'file-text-o' , screen:'Layout'},
     { id: '5', name: '3D Elevation Services', icon: 'cubes', screen:'Elevation' },
     { id: '6', name: 'Virtual Reality Experience', icon: 'eye', screen:'VirtualReality'},
-    { id: '7', name: 'Design Ideas', icon: 'lightbulb-o' },
-    { id: '8', name: 'Vaastu Services', icon: 'compass' },
+    { id: '7', name: 'Design Ideas', icon: 'lightbulb-o',screen:'DesignIdeas' },
+    { id: '8', name: 'Vaastu Services', icon: 'compass',screen:'VaastuService' },
   ];
 
   const Civil = [
@@ -38,7 +41,7 @@ const SolutionsScreen = ({ navigation }) => {
 
   const Speciality = [
     { id: '1', name: 'Anti Termite Treatment', icon: 'bug',screen:'AntiTermite' },
-    { id: '2', name: 'Financial Service', icon: 'money' },
+    { id: '2', name: 'Financial Service', icon: 'money', screen:'FinanceService' },
     { id: '3', name: 'Rainwater Harvesting', icon: 'tint',screen:'RainwaterHarvesting' },
     { id: '4', name: 'Solar Service', icon: 'sun-o' ,screen:'SolarService'},
   ];
@@ -147,6 +150,24 @@ const App = () => (
       headerTintColor: 'white', // Change header text color
       title: 'Construction Advisory' // Set title for the screen
     }} 
+    />
+    <Stack.Screen name="DesignIdeas" component={DesignIdeas} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Design Gallery' // Set title for the screen
+    }} 
+    />
+    <Stack.Screen name="FinanceService" component={FinanceService} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Finance' // Set title for the screen
+    }} 
+    />
+    <Stack.Screen name="VaastuService" component={VaastuService} options={{
+        headerShown: false, // Set headerShown to false for Layout screen
+      }}
+     
+ 
     />
   </Stack.Navigator>
 );
