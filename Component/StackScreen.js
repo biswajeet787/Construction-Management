@@ -1,8 +1,17 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 // import { createStackNavigator } from '@react-navigation/stack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  TextInput,
+  View,
+  StyleSheet,
+  Text,
+  Touchable,
+  TouchableOpacity,
+} from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import {useNavigation} from '@react-navigation/native';
 
 import ImagePage from './ImagePage';
 import LoaderPage from './LoaderPage';
@@ -12,64 +21,103 @@ import ImageSlider from './ImageSlider';
 import RegisterPage from './RegisterPage';
 import AllScreen from './AllScreen';
 import SearchScreen from './SearchScreen';
-import CardInnerPage from './HomeScreenInnerPage/CardInnerPage'
-
+import MaterialSearch from './HomeScreenInnerPage/MaterialSearch';
+import ExpertSearch from './HomeScreenInnerPage/ExpertSearch';
+import HomeScreen from './HomeScreen';
 
 // const Stack = createStackNavigator();
-const Stack=createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const StackScreen = () => {
   return (
-    
-      <Stack.Navigator initialRouteName="ImagePage">
-        <Stack.Screen
-          name="ImagePage"
-          component={ImagePage}
-          options={{ headerShown: false}} // Hides the header for ImagePage
-        />
-        <Stack.Screen
-          name="LoaderPage"
-          component={LoaderPage}
-          options={{ headerShown: false }} // Hides the header for LoaderPage
-        />
-        <Stack.Screen
-          name="SignUpPage" // Correct the typo here from 'LoinScreen' to 'LoginScreen'
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="OTPScreen"
-          component={OTPScreen} // Add OTPScreen to the stack
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="ImageSlider"
-          component={ImageSlider} // Use ImageSlider component
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="RegisterPage"
-          component={RegisterPage} // Use ImageSlider component
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="AllScreen"
-          component={AllScreen} // Use ImageSlider component
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="SearchScreen"
-          component={SearchScreen} // Use SearchScreen component
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="CardInnerPage"
-          component={CardInnerPage} // Use SearchScreen component
-          options={{ headerShown: true }}
-        />
-      </Stack.Navigator>
-    
+    <Stack.Navigator initialRouteName="ImagePage">
+      <Stack.Screen
+        name="ImagePage"
+        component={ImagePage}
+        options={{headerShown: false}} // Hides the header for ImagePage
+      />
+      <Stack.Screen
+        name="LoaderPage"
+        component={LoaderPage}
+        options={{headerShown: false}} // Hides the header for LoaderPage
+      />
+      <Stack.Screen
+        name="SignUpPage" // Correct the typo here from 'LoinScreen' to 'LoginScreen'
+        component={LoginScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="OTPScreen"
+        component={OTPScreen} // Add OTPScreen to the stack
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ImageSlider"
+        component={ImageSlider} // Use ImageSlider component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RegisterPage"
+        component={RegisterPage} // Use ImageSlider component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AllScreen"
+        component={AllScreen} // Use ImageSlider component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SearchScreen"
+        component={SearchScreen} // Use SearchScreen component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="MaterialSearch"
+        component={MaterialSearch} // Use Material component
+        options={{header: () => <CustomHeaderForMaterial />}}
+      />
+      <Stack.Screen
+        name="ExpertSearch"
+        component={ExpertSearch} // Use Material component
+        options={{header: () => <CustomHeaderForMaterial />}}
+      />
+    </Stack.Navigator>
   );
 };
 
 export default StackScreen;
+
+const CustomHeaderForMaterial = () => {
+  const navigation = useNavigation();
+  return (
+    // Your custom header component JSX goes here
+    // You can use View, Text, Image, etc., and style it as needed
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: '#713ABE',
+        height: 80,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+      }}>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Home');
+        }}>
+        <AntDesign
+          name="arrowleft"
+          size={27}
+          color="#fff"
+          style={{marginLeft: 10}}
+        />
+      </TouchableOpacity>
+      <View style={{marginRight: 142}}>
+        <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bold'}}>
+          Materials
+        </Text>
+      </View>
+    </View>
+  );
+};
