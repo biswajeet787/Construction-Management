@@ -31,7 +31,7 @@ const Expensetrack = () => {
       </View>
       <TouchableOpacity style={styles.button2} onPress={showModal}>
                                         {/*on press {() => handleButtonPress('Button 2')} */}
-        <Text style={styles.buttonText1}>Expance History</Text>
+        <Text style={styles.buttonText1}>Expense History</Text>
         <View>
         <Icon
           name={isArrowDown ? 'arrow-down' : 'arrow-right'}
