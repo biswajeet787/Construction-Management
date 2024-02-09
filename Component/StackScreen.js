@@ -54,6 +54,33 @@ const StackScreen = () => {
   return (
     <Stack.Navigator initialRouteName="ImagePage">
       <Stack.Screen
+        name="ImagePage"
+        component={ImagePage}
+        options={{headerShown: false}} // Hides the header for ImagePage
+      />
+      <Stack.Screen
+        name="LoaderPage"
+        component={LoaderPage}
+        options={{headerShown: false}} // Hides the header for LoaderPage
+      />
+      <Stack.Screen
+        name="SignUpPage" // Correct the typo here from 'LoinScreen' to 'LoginScreen'
+        component={LoginScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="OTPScreen"
+        component={OTPScreen} // Add OTPScreen to the stack
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ImageSlider"
+        component={ImageSlider} // Use ImageSlider component
+        options={{headerShown: false}}
+      />
+      
+      
+      <Stack.Screen
         name="PersonalDetails"
         component={PersonalDetails}
         options={{
