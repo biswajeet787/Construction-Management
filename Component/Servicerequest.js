@@ -104,15 +104,16 @@ import React, { useState } from 'react';
           
         </View>
       </ScrollView>
-      {/* <Image source={require('../images/Noresult.png')}
+      <Image source={require('../image/Noreasult.png')}
        style={{
         marginTop:30,
       borderRadius:1,
         width:screenWidth,
         height: 300,
         resizeMode: 'contain',
+       
         //alignContent:'center',
-      }} /> */}
+      }} />
       </View>
     );
   };
@@ -120,6 +121,7 @@ import React, { useState } from 'react';
     container: {
       // backgroundColor: '',
       padding: 0,
+      
     },
     dropdown: {
   
