@@ -1,10 +1,17 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView,isArrowDown } from 'react-native';
+import React,{useState} from 'react';
+import { Modal,View, Text, StyleSheet, TouchableOpacity, ScrollView,isArrowDown } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Expancedetails from './Expancedetails';
 
 
 const Expensetrack = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const showModal = () => {
+   setModalVisible(true); // show the modal
+   setTimeout(() => {
+     setModalVisible(false); // hide the modal after 3 seconds
+   }, 3000);
+ };
   return (
     <ScrollView style={styles.container}>
       <View style={styles.box}>
@@ -17,11 +24,13 @@ const Expensetrack = () => {
 
       {/* Add two buttons */}
       <View style={styles.card1}>
-      <TouchableOpacity style={styles.button1} onPress={() => handleButtonPress('Button 1')}>
+      <TouchableOpacity style={styles.button1} onPress={showModal}>
+                                                {/* on press= {() => handleButtonPress('Button 1')} */}
         <Text style={styles.buttonText}>DOWNLOAD</Text>
       </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.button2} onPress={() => handleButtonPress('Button 2')}>
+      <TouchableOpacity style={styles.button2} onPress={showModal}>
+                                        {/*on press {() => handleButtonPress('Button 2')} */}
         <Text style={styles.buttonText1}>Expance History</Text>
         <View>
         <Icon
@@ -32,6 +41,18 @@ const Expensetrack = () => {
         />
     </View>
       </TouchableOpacity>
+      <Modal
+    animationType="fade"
+    transparent={true}
+    visible={modalVisible}
+    onRequestClose={() => {
+      setModalVisible(false);
+    }}
+  >
+    <View style={styles.modalView}>
+      <Text style={styles.modalText}>! No expenses added</Text>
+    </View>
+  </Modal>
     </ScrollView>
   );
 };
@@ -126,7 +147,7 @@ marginLeft: 20,
 button2:{
   margin: 25,
   width:370,
-  padding: 20,
+  padding: 15,
   backgroundColor: 'white',
   borderRadius: 10,
   shadowColor: '#000',
@@ -151,8 +172,26 @@ buttonText1: {
 },
 icon:{
   marginLeft: 300,
-  top: -20
-}
+  bottom:20,
+}, modalView: {
+  position: 'absolute',
+  top: 10,
+  width: 200,
+  backgroundColor: 'white',
+  padding: 10,
+  borderRadius:50,
+  alignItems: 'center',
+  // justifyContent:'center',
+  // alignContent:'center',
+  marginLeft:90,
+  elevation: 5,
+  backgroundColor:'orange'
+},
+modalText: {
+  fontSize: 14,
+  color: 'black',
+  fontWeight: 'bold',backgroundColor:'orange',
+},
 });
 
 export default Expensetrack;
