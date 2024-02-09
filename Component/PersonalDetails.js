@@ -26,7 +26,6 @@ const PersonalDetails = ({ route }) => {
       checkIfUpdateEnabled();
     }
   }, [route.params]);
-
   
   const [isUpdateEnabled, setIsUpdateEnabled] = useState(false);
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -197,7 +196,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     paddingTop: 10,
-    backgroundColor: '#E5CFF7',
+    backgroundColor: 'white',
   },
   heading: {
     fontSize: 33,
@@ -220,7 +219,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     color: 'black',
     zIndex: 1,
-    backgroundColor:'#E5CFF7',
+    backgroundColor:'white',
     margin: 5,
   },
   textInput: {
