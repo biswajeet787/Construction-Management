@@ -12,7 +12,7 @@ const Card = () => {
     <View style={Styles.container}>
       <View style={Styles.cardContainer}>
         <View style={Styles.card}>
-          <TouchableOpacity onPress={()=>{navigation.navigate('CardInnerPage')}}>
+          <TouchableOpacity onPress={()=>{navigation.navigate('MaterialSearch')}}>
             <FontAwesome5
               name="building"
               size={50}
@@ -28,7 +28,7 @@ const Card = () => {
         </View>
 
         <View style={Styles.card}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate('ExpertSearch')}}>
             <FontAwesome6
               name="building-user"
               size={50}

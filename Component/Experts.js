@@ -1,49 +1,39 @@
-// import React from 'react';
-// import { ScrollView, Text } from 'react-native';
-
-// const OrderScreen = () => (
-//   <ScrollView>
-//     <Text>Orders Screen</Text>
-//   </ScrollView>
-// );
-
-// export default OrderScreen;
-
-
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Tabs } from 'react-native-collapsible-tab-view';
-import Saved from '../Component/Saved';
-import Servicerequest from '../Component/Servicerequest';
-import Expensetrack from '../Component/Expensetrack';
+import Architects from '../Component/Architects';
+import Engineers from'../Component/Engineers';
+import Contractors from'../Component/Contractors';
+
 
 const Header = () => {
     return (
       <View style={styles.header}>
-        <Text style={styles.headerText}>Order</Text>
+        {/* <Text style={styles.headerText}>Experts</Text> */}
       </View>
     )
   }
 
-const OrderScreen= () => {
+const Experts= () => {
   return (
     
     <Tabs.Container renderHeader={Header}>
-      <Tabs.Tab name="SERVICE REQUIR">
+      <Tabs.Tab name="Architects">
       <Tabs.ScrollView >
-        <Servicerequest/>
+        <Architects/>
+
         </Tabs.ScrollView >
       </Tabs.Tab>
-      <Tabs.Tab name="EXPENSE TRACKER">
+      <Tabs.Tab name="Engineers">
         <Tabs.ScrollView >
-        <Expensetrack/>
+        <Engineers/>
 
         </Tabs.ScrollView >
         
       </Tabs.Tab>
-      <Tabs.Tab name="SAVED" >
+      <Tabs.Tab name="Contractors" >
         <Tabs.ScrollView >
-        <Saved/>
+        <Contractors/>
         </Tabs.ScrollView >
       </Tabs.Tab>
     </Tabs.Container>
@@ -54,9 +44,9 @@ const styles=StyleSheet.create({
     flex:1
   },
 header:{
-  height:100,
+  height:0,
   width:'100%',
-  backgroundColor:'#5B0888',
+  backgroundColor:'#713ABE',
   justifyContent: 'flex-end',
   alignItems: 'center',
   
@@ -73,4 +63,4 @@ tabstl:{
 }
 });
 
-export default OrderScreen;
+export default Experts;
