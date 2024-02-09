@@ -1,11 +1,21 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const Rewards = () => {
+const Stack = createStackNavigator();
+
+const Rewards = ({ navigation }) => {
   const handleCardPress = (cardTitle) => {
     // Handle card press logic here
     console.log(`Card pressed: ${cardTitle}`);
+    // Navigate to the next screen here
+    navigation.navigate('ReferHomeBuiders', { cardTitle });
+  };
+
+    const handleCardPress1 = (cardTitle) => { 
+    console.log(`Card pressed: ${cardTitle}`);
+    // Navigate to the next screen here
+    navigation.navigate('ReferPartners', { cardTitle });
   };
 
   return (
@@ -24,21 +34,15 @@ const Rewards = () => {
       <View style={styles.cardsContainer}>
         <TouchableOpacity onPress={() => handleCardPress('Refer Home Builders')}>
           <View style={styles.card}>
-            <Icon name="home-city" size={60} color="#713ABE" />
-            <Text style={styles.cardTitle}></Text>
+            <Image source={require('../image/house.png')} style={styles.Image} resizeMode="cover" />
           </View>
         </TouchableOpacity>
-
-        {/* Add margin to create a gap */}
-        <TouchableOpacity onPress={() => handleCardPress('Refer Partners')}>
+        <TouchableOpacity onPress={() => handleCardPress1('Refer Partners')}>
           <View style={[styles.card, { marginLeft: 16 }]}>
-            <Icon name="home" size={60} color="#713ABE" />
-            <Text style={styles.cardTitle}></Text>
+            <Image source={require('../image/builderperson.png')} style={styles.Image} resizeMode="cover" />
           </View>
         </TouchableOpacity>
       </View>
-
-      {/* Add text components below each card */}
       <View style={styles.textBelowCardsContainer}>
         <Text style={styles.textBelowCards}>Refer Home Builders</Text>
         <Text style={styles.textBelowCards}>Refer Partners</Text>
@@ -52,21 +56,24 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     padding: 16,
-    backgroundColor:'#E5CFF7'
+    backgroundColor: 'white'
   },
   text: {
     fontSize: 18,
     marginBottom: 10,
+    color: 'black'
   },
   heading: {
     fontSize: 19,
     fontWeight: 'bold',
+    color: 'black',
     marginBottom: 10,
   },
-  line:{
-    fontSize:17,
+  line: {
+    fontSize: 17,
     marginBottom: 10,
-    fontWeight:'bold',
+    fontWeight: 'bold',
+    color: 'black',
   },
   descriptionContainer: {
     justifyContent: 'flex-start',
@@ -74,14 +81,21 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 18,
+    color: 'black'
+  },
+  Image: {
+    height: 100,
+    width: 100,
+    aspectRatio: 1,
+    borderRadius: 50,
   },
   card: {
     backgroundColor: '#fff',
     padding: 16,
-    borderRadius: 30,
+    borderRadius: 20,
     marginBottom: 16,
-    width: 190,
-    height: 150,
+    width: 180,
+    height: 170,
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: '#000',
@@ -107,7 +121,8 @@ const styles = StyleSheet.create({
   },
   textBelowCards: {
     fontSize: 16,
-    marginBottom: 8,
+    bottom: 16,
+    color: 'black'
   },
 });
 

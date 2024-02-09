@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'; // Import the specific
 
 const Settings= () => {
   const menuItems = [
+    { text: 'Manage',icon: 'lightbulb-o'},
     { text: 'Alerts', icon: 'bell' },
     { text: 'Delete Account', icon: 'trash-o' },
   ];
@@ -29,7 +30,7 @@ const Settings= () => {
 
 const styles = StyleSheet.create({
   menu: {
-    backgroundColor: '#E5CFF7',
+   backgroundColor: 'white',
     padding: 20,
     paddingBottom: 650,
   },

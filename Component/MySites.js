@@ -39,11 +39,11 @@ const MySitesScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor:'#E5CFF7'
+    backgroundColor:'white'
   },
   heading: {
     alignItems: 'flex-start',
-    backgroundColor:'white',
+    backgroundColor:'#E5CFF7',
   },
   headingText: {
     fontSize: 24,

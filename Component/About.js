@@ -31,7 +31,7 @@ const About = () => {
 
 const styles = StyleSheet.create({
   menu: {
-    backgroundColor: '#E5CFF7',
+    backgroundColor: 'white',
     padding: 20,
     paddingBottom: 650,
   },
