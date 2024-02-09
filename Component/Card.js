@@ -3,13 +3,16 @@ import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import { SocialIcon } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/native';
+
 
 const Card = () => {
+  const navigation = useNavigation();
   return (
     <View style={Styles.container}>
       <View style={Styles.cardContainer}>
         <View style={Styles.card}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate('MaterialSearch')}}>
             <FontAwesome5
               name="building"
               size={50}
@@ -17,7 +20,7 @@ const Card = () => {
               style={Styles.cardImage}
             />
             <View style={{}}>
-              <Text style={Styles.cardText1}>Martial Search</Text>
+              <Text style={Styles.cardText1}>Material Search</Text>
               {/* <Text style={Styles.cardText1}>Find trustworthy</Text> */}
             </View>
             
@@ -25,7 +28,7 @@ const Card = () => {
         </View>
 
         <View style={Styles.card}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate('ExpertSearch')}}>
             <FontAwesome6
               name="building-user"
               size={50}
@@ -67,7 +70,7 @@ const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 30,
+    padding: 20,
     backgroundColor: '#fff',
   },
   card: {
@@ -79,7 +82,7 @@ const Styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   cardImage: {
-    width: 130,
+    width: 120,
     height: 130,
     // borderRadius: 75,
     marginBottom: 10,
@@ -88,14 +91,14 @@ const Styles = StyleSheet.create({
   cardText1: {
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 20,
-    bottom: '250%',
+    fontSize: 16,
+    bottom: '291%',
     color:'black'
   },
   cardText2: {
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 16,
     bottom: '40%',
     color:'black'
   },
