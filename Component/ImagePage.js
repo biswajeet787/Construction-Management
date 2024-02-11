@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet,Button } from 'react-native';
 
 const ImagePage = ({ navigation }) => {
-  const [showImage, setShowImage] = useState(true);
+  const [image, setShowImage] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowImage(false); // Hide the image after 4 seconds
       navigation.navigate('LoaderPage'); // Navigate to LoaderPage after hiding the image
+      
     }, 4000); // 4000 milliseconds = 4 seconds
 
-    return () => clearTimeout(timer); // Clear the timer if the component unmounts
-  }, [navigation]);
+    // return () => clearTimeout(timer); // Clear the timer if the component unmounts
+  }, []);
 
   return (
-    <View style={styles.container}>
-      {showImage ? (
+    <View style={styling.container}>
+      {image ? (
         <Image
         source={require('../image/DLB.png')} // Adjust the path as per your project structure
-        style={styles.image}
+        style={styling.images}
         resizeMode="contain"
       />
       ) : null}
@@ -26,14 +27,14 @@ const ImagePage = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styling = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#5b0888',
   },
-  image: {
+  images: {
     width: 200,
     height: 200,
   },

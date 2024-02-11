@@ -1,25 +1,23 @@
 import React from 'react';
-import { ScrollView,View } from 'react-native';
+import {ScrollView, View} from 'react-native';
 import Slider from './Slider';
 import Card from './Card';
 import Grid from './Grid';
-import SliderBackGroundNav from './SliderBackGroundNav';
-import HomeVideoSlider from './HomeVideoSlider';
+import HomeCardSlider from './HomeCardSlider';
+import HomeTopNav from './HomeTopNav';
+import HomeImageCarousel from './HomeImageCarousel';
 
 const HomeScreen = () => (
-  <ScrollView>
-    <View style={{height:150}}>
-      {/* height=150 with only slider component */}
-    {/* <SliderBackGroundNav/> */}
-    <Slider />
-    
-    </View>
-    <Card />
-    <Grid />
-    <View>
-    <HomeVideoSlider />
-    </View>
-  </ScrollView>
+  <View style={{flex: 1}}>
+    <HomeTopNav />
+    <ScrollView>
+      <HomeImageCarousel />
+      <View style={{margin: 10}}></View>
+      <Card />
+      <Grid />
+      <HomeCardSlider />
+    </ScrollView>
+  </View>
 );
 
 export default HomeScreen;
