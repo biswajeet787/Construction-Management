@@ -1,7 +1,4 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
-// import { createStackNavigator } from '@react-navigation/stack';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   TextInput,
@@ -13,9 +10,6 @@ import {
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import ImagePage from './ImagePage';
 import LoaderPage from './LoaderPage';
@@ -45,7 +39,6 @@ import SearchScreen from './SearchScreen';
 import MaterialSearch from './HomeScreenInnerPage/MaterialSearch';
 import ExpertSearch from './HomeScreenInnerPage/ExpertSearch';
 import HomeScreen from './HomeScreen';
-import CardInnerPage from './HomeScreenInnerPage/CardInnerPage'
 
 // const Stack = createStackNavigator();
 const Stack = createNativeStackNavigator();
@@ -78,49 +71,6 @@ const StackScreen = () => {
         component={ImageSlider} // Use ImageSlider component
         options={{headerShown: false}}
       />
-      
-      
-      <Stack.Screen
-        name="PersonalDetails"
-        component={PersonalDetails}
-        options={{
-          headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-          headerTintColor: 'white',
-        }}
-      />
-      <Stack.Screen name="MySites" component={MySitesScreen} />
-      <Stack.Screen
-        name="Rewards"
-        component={Rewards}
-        options={{
-          headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-          headerTintColor: 'white',
-        }}
-      />
-      <Stack.Screen
-        name="Support"
-        component={Support}
-        options={{
-          headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-          headerTintColor: 'white',
-        }}
-      />
-      <Stack.Screen
-        name="Settings"
-        component={Settings}
-        options={{
-          headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-          headerTintColor: 'white',
-        }}
-      />
-      <Stack.Screen
-        name="About"
-        component={About}
-        options={{
-          headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-          headerTintColor: 'white',
-        }}
-      />
       <Stack.Screen name="ReferHomeBuiders" component={ReferHome} 
       options={{
         headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
@@ -151,11 +101,11 @@ const StackScreen = () => {
         component={RegisterPage} // Use ImageSlider component
         options={{headerShown: false}}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="SearchScreen"
         component={SearchScreen} // Use SearchScreen component
         options={{headerShown: false}}
-      />
+      /> */}
       <Stack.Screen
         name="MaterialSearch"
         component={MaterialSearch} // Use Material component
@@ -204,12 +154,7 @@ const StackScreen = () => {
           component={SearchScreen} // Use SearchScreen component
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="CardInnerPage"
-          component={CardInnerPage} // Use SearchScreen component
-          options={{ headerShown: true }}
-
-        />
+        
         <Stack.Screen
           name="PlansScreen"
           component={PlansScreen} // Use ImageSlider component

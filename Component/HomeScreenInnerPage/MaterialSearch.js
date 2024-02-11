@@ -23,6 +23,7 @@ const Article = ({show}) => {
 };
 
 const MaterialSearch = () => {
+  let name='hiii';
   const data = [
     {
       id: 1,
@@ -51,6 +52,7 @@ const MaterialSearch = () => {
     // Add more data objects for additional cards
   ];
   return (
+    <ScrollView>
     <View style={{margin: 15, flex: 1}}>
       <TouchableOpacity>
       <View style={styles.container}>
@@ -87,6 +89,8 @@ const MaterialSearch = () => {
           <Icon name="right" size={18} color="orange" />
         </View>
       </TouchableOpacity>
+
+      {/* ARTICLES & VIEW ALL */}
       <View
         style={{
           flexDirection: 'row',
@@ -101,7 +105,6 @@ const MaterialSearch = () => {
             VIEW ALL
           </Text>
         </TouchableOpacity>
-        
       </View>
       <ArticleForAll />
       
@@ -115,6 +118,7 @@ const MaterialSearch = () => {
       </ScrollView> */}
       {/* <Image source={require('../../image/DLB.png' )} style={{height:200,width:200}}/>  */}
     </View>
+    </ScrollView>
   );
 };
 

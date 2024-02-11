@@ -54,9 +54,9 @@ const MenuScreen = () => {
       navigation.navigate('Settings');
     } else if (item.name === 'About') {
       navigation.navigate('About');
-    }
-    // 'Rate us on the play store' and 'Log out' do not have actions
+  }
   };
+
   const renderRightArrow = (item) => {
     if (item.name === 'My Details') {
       return <Icon name="angle-down" size={20} color="#000000" style={styles.arrowIcon} />;
@@ -68,7 +68,6 @@ const MenuScreen = () => {
 
   return (
     <ScrollView style={styles.scrollView}>
-<<<<<<< HEAD
       <View style={styles.container}>
       <View style={styles.menu1}>
         <Text style={styles.heading}>Menu</Text>
@@ -81,42 +80,6 @@ const MenuScreen = () => {
             style={styles.profileImage}
             resizeMode="cover"
           />
-=======
-      <View style={styles.menu}>
-        <Text style={styles.heading}></Text>
-        <View style={styles.imageContainer}>
-        <Image source={require('../image/business.jpg')} style={styles.profileImage} resizeMode="cover" />
-      </View>
-      <View>
-        <Text style={styles.heading}>User</Text>
-      <View style={styles.menuBox}>
-          {menuItems.map((item, index) => (
-            <View key={index}>
-              <TouchableOpacity
-                style={styles.menuItem}
-                onPress={() => handleItemClick(item)}>
-                <View style={styles.iconContainer}>
-                  <Icon name={item.icon} size={20} color="#000000" style={styles.icon} />
-                </View>
-                <Text style={styles.menuItemText}>{item.name}</Text>
-                {renderRightArrow()}
-              </TouchableOpacity>
-
-              {item.subItems && showDetails && (
-                <View style={styles.detailsDropdown}>
-                  {item.subItems.map((subItem, subIndex) => (
-                    <TouchableOpacity
-                      key={subIndex}
-                      style={styles.dropdownItem}
-                      onPress={() => navigation.navigate(subItem.screen)}>
-                      <Text style={styles.dropdownItemText}>{subItem.name}</Text>
-                    </TouchableOpacity>
-                  ))}
-                </View>
-              )}
-            </View>
-          ))}
->>>>>>> 50c8d41fd50643be0e2fe97c2583c37c023f3a59
         </View>
         <View style={styles.menuText}>
             {menuItems.map((item, index) => (

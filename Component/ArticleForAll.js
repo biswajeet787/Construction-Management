@@ -7,33 +7,39 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'; // You can choose a different icon library
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Card = ({item}) => (
+  
   <View style={styles.card}>
-    <Image source={item.image} style={styles.image} />
-    <View style={styles.iconRow}>
-      <View style={{flexDirection: 'row'}}>
-        <TouchableOpacity>
+    <Image source={item.image} resizeMode='contain' style={styles.cardImage} />
+    <View style={{margin: 10}}>
+      <Text style={styles.heading}>{item.heading}</Text>
+      <Text style={styles.description}>{item.description}</Text>
+      <View style={styles.cardIcon}>
+        <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity>
+            <Icon
+              name="thumbs-up"
+              size={25}
+              color="#5B0888"
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+          <Text style={[styles.iconText, {marginLeft: 10}]}>0 Likes</Text>
+        </View>
+        <View style={{flexDirection: 'row'}}>
           <Icon
-            name="thumbs-up"
-            size={20}
+            name="eye"
+            size={25}
             color="#5B0888"
-            style={styles.icon}
+            style={{marginRight: 10}}
           />
-        </TouchableOpacity>
-        <Text style={styles.iconText}>0 Likes</Text>
-      </View>
-      <View style={{flexDirection: 'row'}}>
-        <TouchableOpacity>
-          <Icon name="eye" size={20} color="#5B0888" style={styles.icon} />
-        </TouchableOpacity>
-        <Text style={styles.iconText}>0 Views</Text>
+
+          <Text style={styles.iconText}>0 Views</Text>
+        </View>
       </View>
     </View>
-    {/* Additional card content, if needed */}
-    <Text style={styles.heading}>{item.heading}</Text>
-    <Text style={styles.subtext}>{item.description}</Text>
   </View>
 );
 
@@ -41,27 +47,28 @@ const ArticleForAll = () => {
   const data = [
     {
       id: 1,
-      image: require('../image/image1.jpg'),
-      heading: 'Utilizing the right',
-      description: 'Description text here.',
+      image: require('../image/bricks.jpeg'),
+      heading: 'Utilizing the right materials for wall construction',
+      description:
+        'While walls are one of the basic elements of your home, they can be constructed out...',
     },
     {
       id: 2,
-      image: require('../image/image2.jpg'),
-      heading: 'Sample Heading 2',
-      description: 'Another description text.',
+      image: require('../image/electricWorkSafety.jpeg'),
+      heading: 'Electric work safety - Basic measures when building your home',
+      description: 'Here is what to consider when it comes to your wiring layout, switches and safety for...',
     },
     {
       id: 3,
-      image: require('../image/image3.jpg'),
-      heading: 'Sample Heading 3',
-      description: 'Yet another description text.',
+      image: require('../image/avoidWaterStorage.jpeg'),
+      heading: 'Avoid water storage woes with Smart home construction',
+      description: 'Different types of water tanks are used for water storage. Read on to know more...',
     },
     {
       id: 4,
-      image: require('../image/image10.jpg'),
-      heading: 'Sample Heading 4',
-      description: 'More description text.',
+      image: require('../image/qualityGlass.jpg'),
+      heading: 'How to check for good quality glass for home construction',
+      description: 'As glass is now increasingly being used in home construction, we will guide you on...',
     },
   ];
 
@@ -74,7 +81,8 @@ const ArticleForAll = () => {
   );
 };
 
-const cardWidth = 300;
+const cardWidth = 330;
+// const cardHeight = 230;
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -82,39 +90,35 @@ const styles = StyleSheet.create({
   },
   card: {
     width: cardWidth,
-    marginRight: 20,
-    borderRadius: 8,
-    borderWidth: 5,
+    // height:cardHeight,
+    borderWidth: 2,
     borderColor: '#ddd',
-    overflow: 'hidden',
-  },
-  image: {
-    width: '100%',
-    height: 200,
-    borderRadius: 8,
-  },
-  iconRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 10,
-    margin: 15,
-  },
-  icon: {
     marginRight: 10,
+    borderRadius: 10,
+    overflow: 'hidden',
+    marginTop:10
   },
-  iconText: {
-    fontSize: 16,
-    color: '#5B0888',
+  cardImage: {
+    width: '100%',
+    height: 284,
+    // margin:5
   },
   heading: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginVertical: 8,
-    textAlign: 'center',
+    fontSize: 18,
+    color: 'black',
   },
-  subtext: {
-    fontSize: 16,
-    textAlign: 'center',
+  description: {
+    fontSize: 15,
+    paddingTop: 5,
+  },
+  cardIcon: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 10,
+  },
+  iconText: {
+    color: 'black',
+    fontSize: 18,
   },
 });
 
