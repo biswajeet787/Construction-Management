@@ -1,35 +1,56 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const SolutionsScreen = () => {
+import Icon from 'react-native-vector-icons/FontAwesome';
+import ConceptDesignPackageScreen from './ConceptDesign';
+import DesignPackage from './AdvanceDesignPackage'; // Import AdvancedConceptDesignPackageScreen
+import VisualizationPackage from './VisualizationPackage';
+import Layout from './Layout';
+import Elevation from './Elevation';
+import VirtualReality from './VirtualReality';
+import AntiTermite from './AntiTermite';
+import RainwaterHarvesting from './RainwaterHarvesting';
+import SolarService from './SolarService';
+import ConstructionAdvisory from './ConstructionAdvisory';
+import DesignIdeas from './DesignIdeas';
+import FinanceService from './FinanceService';
+import VaastuService from './VaastuService';
+
+
+
+
+
+
+
+const SolutionsScreen = ({ navigation }) => {
   const Design = [
-    { id: '1', name: 'Concept Design Package', icon: 'home' },
-    { id: '2', name: 'Advanced concept Design', icon: 'rocket' },
-    { id: '3', name: 'Visualization Packages', icon: 'picture-o' },
-    { id: '4', name: '2D Layout Services', icon: 'file-text-o' },
-    { id: '5', name: '3D Elevation Services', icon: 'cubes' },
-    { id: '6', name: 'Virtual Reality Experience', icon: 'eye' },
-    { id: '7', name: 'Design Ideas', icon: 'lightbulb-o' },
-    { id: '8', name: 'Vaastu Services', icon: 'compass' },
+    { id: '1', name: 'Concept Design Package', icon: 'home', screen: 'ConceptDesignPackage' },
+    { id: '2', name: 'Advanced concept Design', icon: 'rocket', screen: 'AdvancedConceptDesign' },
+    { id: '3', name: 'Visualization Packages', icon: 'picture-o', screen:'VisualizationPackage'},
+    { id: '4', name: '2D Layout Services', icon: 'file-text-o' , screen:'Layout'},
+    { id: '5', name: '3D Elevation Services', icon: 'cubes', screen:'Elevation' },
+    { id: '6', name: 'Virtual Reality Experience', icon: 'eye', screen:'VirtualReality'},
+    { id: '7', name: 'Design Ideas', icon: 'lightbulb-o',screen:'DesignIdeas' },
+    { id: '8', name: 'Vaastu Services', icon: 'compass',screen:'VaastuService' },
   ];
 
   const Civil = [
-    { id: '1', name: 'Construction Advisory', icon: 'wrench' },
+    { id: '1', name: 'Construction Advisory', icon: 'wrench', screen:'ConstructionAdvisory' },
   ];
 
   const Speciality = [
-    { id: '1', name: 'Anti Termite Treatment', icon: 'bug' },
-    { id: '2', name: 'Financial Service', icon: 'money' },
-    { id: '3', name: 'Rainwater Harvesting', icon: 'tint' },
-    { id: '4', name: 'Solar Service', icon: 'sun-o' },
+    { id: '1', name: 'Anti Termite Treatment', icon: 'bug',screen:'AntiTermite' },
+    { id: '2', name: 'Financial Service', icon: 'money', screen:'FinanceService' },
+    { id: '3', name: 'Rainwater Harvesting', icon: 'tint',screen:'RainwaterHarvesting' },
+    { id: '4', name: 'Solar Service', icon: 'sun-o' ,screen:'SolarService'},
   ];
 
   const renderGrid = (items) => {
     return (
       <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginLeft: 8 }}>
         {items.map((item) => (
-          <TouchableOpacity key={item.name} style={styles.gridItem}>
+          <TouchableOpacity key={item.name} style={styles.gridItem} onPress={() => navigation.navigate(item.screen)}>
             <View style={styles.boxContainer}>
               <View style={styles.circle}>
                 <Icon name={item.icon} size={35} color="#000000" style={styles.icon} />
@@ -65,6 +86,92 @@ const SolutionsScreen = () => {
   );
 };
 
+const Stack = createStackNavigator();
+
+const App = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Solutions" component={SolutionsScreen} options={{headerShown:false}} />
+    <Stack.Screen name="ConceptDesignPackage" component={ConceptDesignPackageScreen} options={{
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+    }} />
+    <Stack.Screen name="AdvancedConceptDesign" component={DesignPackage} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Advanced Concept Design' // Set title for the screen
+    }} />
+    <Stack.Screen name="VisualizationPackage" component={VisualizationPackage} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Visualization Package' // Set title for the screen
+    }} />
+   <Stack.Screen
+      name="Layout"
+      component={Layout}
+      options={{
+        headerShown: false, // Set headerShown to false for Layout screen
+      }}
+    />
+    <Stack.Screen
+      name="Elevation"
+      component={Elevation}
+      options={{
+        headerShown: false, // Set headerShown to false for Layout screen
+      }}
+    />
+
+<Stack.Screen
+      name="VirtualReality"
+      component={VirtualReality}
+      options={{
+        headerShown: false, // Set headerShown to false for Layout screen
+      }}
+    />
+     <Stack.Screen name="AntiTermite" component={AntiTermite} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Anti Termite Treatment' // Set title for the screen
+    }} 
+    />
+     <Stack.Screen name="RainwaterHarvesting" component={RainwaterHarvesting} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Rainwater Harvesting' // Set title for the screen
+    }} 
+    />
+    <Stack.Screen name="SolarService" component={SolarService} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Solar Service' // Set title for the screen
+    }} 
+    />
+    <Stack.Screen name="ConstructionAdvisory" component={ConstructionAdvisory} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Construction Advisory' // Set title for the screen
+    }} 
+    />
+    <Stack.Screen name="DesignIdeas" component={DesignIdeas} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Design Gallery' // Set title for the screen
+    }} 
+    />
+    <Stack.Screen name="FinanceService" component={FinanceService} options={{ // Add route for AdvancedConceptDesignPackageScreen
+      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+      headerTintColor: 'white', // Change header text color
+      title: 'Finance' // Set title for the screen
+    }} 
+    />
+    <Stack.Screen name="VaastuService" component={VaastuService} options={{
+        headerShown: false, // Set headerShown to false for Layout screen
+      }}
+     
+ 
+    />
+  </Stack.Navigator>
+);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -94,17 +201,17 @@ const styles = StyleSheet.create({
   },
   boxContainer: {
     marginTop:20,
-    width: 101, // Adjust the width of the box container as needed
-    height: 80, // Adjust the height of the box container as needed
+    width: 101,
+    height: 80,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 0,
-     borderRadius: 7,
+    borderRadius: 7,
     borderBottomLeftRadius:0,
     borderBottomRightRadius:0,
     marginRight:1.8,
-    borderColor: '#E5CFF7', // Border color for the box
- backgroundColor:'#FFEAD2',
+    borderColor: '#E5CFF7',
+    backgroundColor:'#FFEAD2',
   },
   circle: {
     width: 60,
@@ -128,9 +235,7 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     borderTopLeftRadius:0,
     borderTopRightRadius:0,
-    //marginTop: 5, // Add margin between icon and text
     height:80,
-    //elevation: 5,
     marginRight:1.8,
   },
   civil: {
@@ -152,4 +257,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SolutionsScreen;
+export default App;

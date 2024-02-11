@@ -1,27 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
   SafeAreaView,
-  Image,
   StyleSheet,
   TouchableWithoutFeedback,
   Keyboard,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+
 const LoginScreen = ({ navigation }) => {
   const [mobileNumber, setMobileNumber] = useState('');
+  const [loginErrorMessage, setLoginErrorMessage]= useState("")
 
-  const handleContinuePress = () => {
-    if (mobileNumber.length === 10) {
+  const regexTocheckMobileNumbre = /^[0-9]{10}$/; //Regex to check the valid mobile numberf
+  const handleContinuePress =() => {
+    if (regexTocheckMobileNumbre.test(mobileNumber)) {
       navigation.navigate('OTPScreen'); // Navigate to the OTPScreen
-    } else {
-      console.warn('Please enter a valid phone number');
+    } 
+  }
+
+
+ //Handle login error 
+  useEffect(() => {
+    if (!regexTocheckMobileNumbre.test(mobileNumber) && mobileNumber!== "" ) {
+      setLoginErrorMessage('Please enter a valid phone number');
+    } else{
+      setLoginErrorMessage('');
     }
-  };
+  },[mobileNumber])
 
   const handleGoogleLogin = () => {
     // Placeholder function for Google login
@@ -32,8 +42,9 @@ const LoginScreen = ({ navigation }) => {
     // Placeholder function for Facebook login
     console.log('Login with Facebook pressed');
   };
-
-  const isContinueButtonEnabled = mobileNumber.length !== 10;
+ 
+  //Handle button disable
+  const isContinueButtonEnabled = !regexTocheckMobileNumbre.test(mobileNumber);
   const dismissKeyboard = () => {
     Keyboard.dismiss();
   };
@@ -64,6 +75,9 @@ const LoginScreen = ({ navigation }) => {
           />
         </View>
       </View>
+      <View>
+         <Text style={styles.loginErrorMsg}>{loginErrorMessage}</Text>
+      </View>
 
       <View style={styles.socialLoginContainer}>
         <Text style={{ fontWeight: '700', textAlign: 'center', marginTop: 20 }}>
@@ -75,10 +89,7 @@ const LoginScreen = ({ navigation }) => {
             onPress={handleGoogleLogin}
             style={styles.loginOptionContainer}
           >
-            {/* <Image
-              source={require('../images/google.png')}
-              style={styles.logoImage}
-            /> */}
+            
             
             <Icon name="google" size={24} color="#4285F4" /> 
             <Text style={styles.signinTextGoogle}>
@@ -89,10 +100,7 @@ const LoginScreen = ({ navigation }) => {
             onPress={handleFacebookLogin}
             style={styles.loginOptionContainer}
           >
-            {/* <Image
-              source={require('../images/facebook.png')}
-              style={styles.logoImage}
-            /> */}
+            
 
         <Icon name="facebook-square" size={24} color="#3b5998" />
         <Text style={styles.signinTextFacebook}>
@@ -138,7 +146,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   mobileNumberContainer: {
-    marginBottom: 20,
+    marginBottom: 6,
   },
   inputWithTextContainer: {
     position: 'relative',
@@ -160,6 +168,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     fontSize: 16,
   },
+  loginErrorMsg:{
+     color: "#DF4423",
+     fontSize:14
+  },
   socialLoginContainer: {
     alignItems: 'center',
     marginBottom: 170,
@@ -169,6 +181,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
   },
+
   signinTextGoogle:{marginLeft:10,fontWeight:'bold',color:'#4285F4'},
   signinTextFacebook:{marginLeft:10,fontWeight:'bold',color:'#3b5998'},
   logoImage: {
