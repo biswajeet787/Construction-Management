@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const Card = ({item}) => (
   
   <View style={styles.card}>
-    <Image source={item.image} resizeMode='contain' style={styles.cardImage} />
+    <Image source={item.image} resizeMode='cover' style={styles.cardImage} />
     <View style={{margin: 10}}>
       <Text style={styles.heading}>{item.heading}</Text>
       <Text style={styles.description}>{item.description}</Text>

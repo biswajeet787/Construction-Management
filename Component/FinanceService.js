@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import ArticleForAll from './ArticleForAll';
 
 const App = () => {
   return (
@@ -53,7 +54,7 @@ const App = () => {
             />
           </View>
         </TouchableOpacity>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
           <View>
             <Text
               style={{
@@ -70,7 +71,11 @@ const App = () => {
                 VIEW ALL
               </Text>
             </TouchableOpacity>
+            
           </View>
+        </View>
+        <View style={{margin:20}}>
+        <ArticleForAll/>
         </View>
       </ScrollView>
     </View>

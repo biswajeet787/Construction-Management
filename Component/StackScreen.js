@@ -39,6 +39,16 @@ import SearchScreen from './SearchScreen';
 import MaterialSearch from './HomeScreenInnerPage/MaterialSearch';
 import ExpertSearch from './HomeScreenInnerPage/ExpertSearch';
 import HomeScreen from './HomeScreen';
+import EventsCard from './HomeScreenInnerPage/EventsCard';
+import SolarSavingsCalculator from './HomeScreenInnerPage/SolarSavingsCalculator';
+import { Permissions } from './HomeScreenInnerPage/Permissions';
+import VaastuScore from './HomeScreenInnerPage/VaastuScore';
+import DBLHomeStudio from './HomeScreenInnerPage/DBLHomeStudio';
+import StyleQuiz from './HomeScreenInnerPage/StyleQuiz';
+import Budgeting from './HomeScreenInnerPage/Budgeting';
+import ServicesExperts from './HomeScreenInnerPage/ServicesExperts';
+import StylesCard from './HomeScreenInnerPage/StylesCard';
+import { EMI_Calculator } from './HomeScreenInnerPage/EMI_Calculator';
 
 // const Stack = createStackNavigator();
 const Stack = createNativeStackNavigator();
@@ -71,31 +81,71 @@ const StackScreen = () => {
         component={ImageSlider} // Use ImageSlider component
         options={{headerShown: false}}
       />
-      <Stack.Screen name="ReferHomeBuiders" component={ReferHome} 
-      options={{
-        headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-        headerTintColor: 'white',
-      }}/>
-      <Stack.Screen name="ReferPartners" component={ReferPartner}
-      options={{
-        headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-        headerTintColor: 'white',
-      }}/>
-    <Stack.Screen name="ReportProblemScreen" component={ReportProblem}
-    options={{
-      headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-      headerTintColor: 'white',
-    }}/>
-     <Stack.Screen name="FAQsScreen" component={FAQsScreen}
-    options={{
-      headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-      headerTintColor: 'white',
-    }}/>
-     <Stack.Screen name="IssueHistoryScreen" component={IssueHistoryScreen}
-    options={{
-      headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
-      headerTintColor: 'white',
-    }}/>
+      <Stack.Screen
+        name="ReferHomeBuiders"
+        component={ReferHome}
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          },
+          headerTintColor: 'white',
+        }}
+      />
+      <Stack.Screen
+        name="ReferPartners"
+        component={ReferPartner}
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          },
+          headerTintColor: 'white',
+        }}
+      />
+      <Stack.Screen
+        name="ReportProblemScreen"
+        component={ReportProblem}
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          },
+          headerTintColor: 'white',
+        }}
+      />
+      <Stack.Screen
+        name="FAQsScreen"
+        component={FAQsScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          },
+          headerTintColor: 'white',
+        }}
+      />
+      <Stack.Screen
+        name="IssueHistoryScreen"
+        component={IssueHistoryScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          },
+          headerTintColor: 'white',
+        }}
+      />
       <Stack.Screen
         name="RegisterPage"
         component={RegisterPage} // Use ImageSlider component
@@ -116,98 +166,172 @@ const StackScreen = () => {
         component={ExpertSearch} // Use Material component
         options={{header: () => <CustomHeaderForMaterial />}}
       />
-   
-      
-        <Stack.Screen
-          name="AllScreen"
-          component={AllScreen} // Use ImageSlider component
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="PersonalDetails"
-          component={PersonalDetails} // Use ImageSlider component
-          
-        />
-         <Stack.Screen
-          name="MySites"
-          component={MySitesScreen} // Use ImageSlider component 
-        />
-         <Stack.Screen
-          name="Rewards"
-          component={Rewards} // Use ImageSlider component 
-        />
-        <Stack.Screen
-          name="Support"
-          component={Support} // Use ImageSlider component 
-        />
-        <Stack.Screen
-          name="Settings"
-          component={Settings} // Use ImageSlider component 
-        />
-        <Stack.Screen
-          name="About"
-          component={About} // Use ImageSlider component 
-         
-        />
-        <Stack.Screen
-          name="SearchScreen"
-          component={SearchScreen} // Use SearchScreen component
-          options={{ headerShown: false }}
-        />
-        
-        <Stack.Screen
-          name="PlansScreen"
-          component={PlansScreen} // Use ImageSlider component
-          options={{
-            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-            headerTintColor: 'white', // Change header text color
-          }}
-        />
-        <Stack.Screen
-          name="StylesScreen"
-          component={StylesScreen} // Use ImageSlider component
-          options={{
-            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-            headerTintColor: 'white', // Change header text color
-          }}
-        />
-         <Stack.Screen
-          name="VideosScreen"
-          component={VideosScreen} // Use ImageSlider component
-          options={{
-            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-            headerTintColor: 'white', // Change header text color
-          }}
-        />
-       <Stack.Screen
-          name="ArticlesScreen"
-          component={ArticlesScreen} // Use ImageSlider component
-          options={{
-            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-            headerTintColor: 'white', // Change header text color
-          }}
-        />
-        <Stack.Screen
-          name="MaterialsScreen"
-          component={ArticlesScreen} // Use ImageSlider component
-          options={{
-            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-            headerTintColor: 'white', // Change header text color
-          }}
-          />
-          <Stack.Screen
-          name="ExpertsScreen"
-          component={Experts} // Use ImageSlider component
-          options={{
-            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-            headerTintColor: 'white', // Change header text color
-            
-          }}
-          />
 
-    
+      <Stack.Screen
+        name="AllScreen"
+        component={AllScreen} // Use ImageSlider component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PersonalDetails"
+        component={PersonalDetails} // Use ImageSlider component
+      />
+      <Stack.Screen
+        name="MySites"
+        component={MySitesScreen} // Use ImageSlider component
+      />
+      <Stack.Screen
+        name="Rewards"
+        component={Rewards} // Use ImageSlider component
+      />
+      <Stack.Screen
+        name="Support"
+        component={Support} // Use ImageSlider component
+      />
+      <Stack.Screen
+        name="Settings"
+        component={Settings} // Use ImageSlider component
+      />
+      <Stack.Screen
+        name="About"
+        component={About} // Use ImageSlider component
+      />
+      <Stack.Screen
+        name="SearchScreen"
+        component={SearchScreen} // Use SearchScreen component
+        options={{headerShown: false}}
+      />
 
-      </Stack.Navigator>
+      <Stack.Screen
+        name="PlansScreen"
+        component={PlansScreen} // Use ImageSlider component
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          }, // Change header background color
+          headerTintColor: 'white', // Change header text color
+        }}
+      />
+      <Stack.Screen
+        name="StylesScreen"
+        component={StylesScreen} // Use ImageSlider component
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          }, // Change header background color
+          headerTintColor: 'white', // Change header text color
+        }}
+      />
+      <Stack.Screen
+        name="VideosScreen"
+        component={VideosScreen} // Use ImageSlider component
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          }, // Change header background color
+          headerTintColor: 'white', // Change header text color
+        }}
+      />
+      <Stack.Screen
+        name="ArticlesScreen"
+        component={ArticlesScreen} // Use ImageSlider component
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          }, // Change header background color
+          headerTintColor: 'white', // Change header text color
+        }}
+      />
+      <Stack.Screen
+        name="MaterialsScreen"
+        component={ArticlesScreen} // Use ImageSlider component
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          }, // Change header background color
+          headerTintColor: 'white', // Change header text color
+        }}
+      />
+      <Stack.Screen
+        name="ExpertsScreen"
+        component={Experts} // Use ImageSlider component
+        options={{
+          headerStyle: {
+            backgroundColor: '#713ABE',
+            height: 100,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          }, // Change header background color
+          headerTintColor: 'white', // Change header text color
+        }}
+      />
+      <Stack.Screen
+        name="DBLHomeStudio"
+        component={DBLHomeStudio} // Use DBLHomeStudio component
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
+        name="EventsCard"
+        component={EventsCard} // Use EventsCard component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SolarSavingsCalculator"
+        component={SolarSavingsCalculator} // Use EventsCard component
+      />
+      <Stack.Screen
+        name="Expensetrack"
+        component={Expensetrack} // Use Expensetrack component
+      />
+      <Stack.Screen
+        name="Permissions"
+        component={Permissions} // Use Permissions component
+      />
+      <Stack.Screen
+        name="VaastuScore"
+        component={VaastuScore} // Use VaastuScore component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="StyleQuiz"
+        component={StyleQuiz} // Use StyleQuiz component
+      />
+      <Stack.Screen
+        name="Budgeting"
+        component={Budgeting} // Use Budgeting component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ServicesExperts"
+        component={ServicesExperts} // Use Budgeting component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="StylesCard"
+        component={StylesCard} // Use Budgeting component
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="EMI_Calculator"
+        component={EMI_Calculator} // Use Budgeting component
+        options={{headerShown: true}}
+      />
+    </Stack.Navigator>
   );
 };
 
