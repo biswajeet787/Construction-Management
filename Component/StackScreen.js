@@ -348,7 +348,7 @@ const StackScreen = () => {
         component={EMI_Calculator} // Use Budgeting component
         options={{headerShown: true}}
       />
-    </Stack.Navigator>
+    
           {/* Solution screen */}
 
           <Stack.Screen name="Solutions" component={SolutionsScreen} options={{headerShown:false}} />
