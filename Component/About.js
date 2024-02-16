@@ -1,21 +1,23 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the specific icon you downloaded
+import { useNavigation } from '@react-navigation/native';
 
 
 const About = () => {
+  const navigation = useNavigation();
   const menuItems = [
-    { text: 'Privacy Policy', icon: 'shield' },
-    { text: 'Term of Use', icon: 'pencil-square-o' },
-    { text: 'App Version', icon: 'android' },
-    { text: 'Cancellation & Refunds Policy', icon: 'times-circle-o' },
+    { text: 'Privacy Policy', icon: 'shield',screen:'Privacy Policy' },
+    { text: 'Terms of Use', icon: 'pencil-square-o',screen:'Terms of Use' },
+    { text: 'App Version', icon: 'android',screen:'App Version' },
+    { text: 'Cancellation & Refunds Policy', icon: 'times-circle-o',screen:'Cancellation & Refunds Policy' },
   ];
 
   return (
     <View style={styles.menu}>
       <View>
         {menuItems.map((item, index) => (
-          <TouchableOpacity key={index} style={styles.menuItem}>
+          <TouchableOpacity key={index} style={styles.menuItem} onPress={() => navigation.navigate(item.screen)}>
             <View style={styles.menuItemContent}>
               <Icon name={item.icon} size={24} color="#9336B4" />
               <Text style={styles.menuItemText}>{item.text}</Text>

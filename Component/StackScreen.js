@@ -34,11 +34,19 @@ import ReferHome from './ReferHome';
 import ReferPartner from './ReferPartner';
 import ReportProblem from './ReportProblem';
 import FAQsScreen from './FAQs';
-import IssueHistoryScreen from './Issue';
+import IssueHistoryScreen from './IssueHistory';
 import SearchScreen from './SearchScreen';
 import MaterialSearch from './HomeScreenInnerPage/MaterialSearch';
 import ExpertSearch from './HomeScreenInnerPage/ExpertSearch';
 import HomeScreen from './HomeScreen';
+import Alerts from './Alerts';
+import Manage from './Manage';
+import PrivacyPolicy from './Privacypolicy';
+import Termofuse from './Termofuse';
+import Cancellation from './Cancellation';
+import TermofUse from './Termofuse';
+import IssueHistory from './IssueHistory';
+import FAQs from './FAQs';
 
 // const Stack = createStackNavigator();
 const Stack = createNativeStackNavigator();
@@ -81,17 +89,17 @@ const StackScreen = () => {
         headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
         headerTintColor: 'white',
       }}/>
-    <Stack.Screen name="ReportProblemScreen" component={ReportProblem}
+    <Stack.Screen name="Report a Problem" component={ReportProblem}
     options={{
       headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
       headerTintColor: 'white',
     }}/>
-     <Stack.Screen name="FAQsScreen" component={FAQsScreen}
-    options={{
+    <Stack.Screen name="FAQs" component={FAQs}
+     options={{
       headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
       headerTintColor: 'white',
     }}/>
-     <Stack.Screen name="IssueHistoryScreen" component={IssueHistoryScreen}
+     <Stack.Screen name="Issue History" component={IssueHistory}
     options={{
       headerStyle: { backgroundColor: '#713ABE', height: 100, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 },
       headerTintColor: 'white',
@@ -126,6 +134,10 @@ const StackScreen = () => {
         <Stack.Screen
           name="PersonalDetails"
           component={PersonalDetails} // Use ImageSlider component
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+          }}
           
         />
          <Stack.Screen
@@ -135,18 +147,34 @@ const StackScreen = () => {
          <Stack.Screen
           name="Rewards"
           component={Rewards} // Use ImageSlider component 
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+          }}
         />
         <Stack.Screen
           name="Support"
           component={Support} // Use ImageSlider component 
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+          }}
         />
         <Stack.Screen
           name="Settings"
           component={Settings} // Use ImageSlider component 
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+          }}
         />
         <Stack.Screen
           name="About"
           component={About} // Use ImageSlider component 
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+          }}
          
         />
         <Stack.Screen
@@ -198,6 +226,51 @@ const StackScreen = () => {
           <Stack.Screen
           name="ExpertsScreen"
           component={Experts} // Use ImageSlider component
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+            
+          }}
+          />
+           <Stack.Screen
+          name="Alerts"
+          component={Alerts} 
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+            
+          }}
+          />
+           <Stack.Screen
+          name="Manage"
+          component={Manage} 
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+            
+          }}
+          />
+          <Stack.Screen
+          name="Privacy Policy"
+          component={PrivacyPolicy} 
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+            
+          }}
+          />
+          <Stack.Screen
+          name="Terms of Use"
+          component={TermofUse} 
+          options={{
+            headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
+            headerTintColor: 'white', // Change header text color
+            
+          }}
+          />
+          <Stack.Screen
+          name="Cancellation & Refunds Policy"
+          component={Cancellation} 
           options={{
             headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
             headerTintColor: 'white', // Change header text color
