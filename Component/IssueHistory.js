@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-const IssueHistoryScreen= () => {
+const IssueHistory= () => {
   const [searchText, setSearchText] = useState('');
 
   const handleUpdatePress = () => {
@@ -94,4 +94,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default IssueHistoryScreen;
+export default IssueHistory;
