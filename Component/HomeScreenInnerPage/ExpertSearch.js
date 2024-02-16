@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import {
   TextInput,
@@ -8,10 +9,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { useNavigation } from '@react-navigation/native'
 
 const ExpertSearch = () => {
+  const navigation = useNavigation();
   return (
     <View style={{margin: 15, flex: 1}}>
+      <TouchableOpacity onPress={()=>navigation.navigate('ServicesExperts')}>
       <View style={styles.container}>
         <Text style={styles.text}>
           Let us help you find Architects, Engineers & Contractors
@@ -32,6 +36,7 @@ const ExpertSearch = () => {
           <Icon name="right" size={23} color="black" style={styles.arrow} />
         </View>
       </View>
+      </TouchableOpacity>
     </View>
   );
 };
