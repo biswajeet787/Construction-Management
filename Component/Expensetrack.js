@@ -147,7 +147,7 @@ marginLeft: 20,
 button2:{
   margin: 25,
   width:370,
-  padding: 15,
+  padding: 10,
   backgroundColor: 'white',
   borderRadius: 10,
   shadowColor: '#000',
@@ -165,7 +165,7 @@ buttonText1: {
 
   color: 'black',
   marginRight: 180,
-  fontSize: 16,
+  fontSize: 18,
   fontWeight: 'bold',
   padding: 8,
   

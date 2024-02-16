@@ -29,7 +29,7 @@ const OrderScreen= () => {
   return (
     
     <Tabs.Container renderHeader={Header}>
-      <Tabs.Tab name="SERVICE REQUIR">
+      <Tabs.Tab name="SERVICE REQUESTS">
       <Tabs.ScrollView >
         <Servicerequest/>
         </Tabs.ScrollView >
