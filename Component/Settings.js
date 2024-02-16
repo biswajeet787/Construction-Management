@@ -1,20 +1,39 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the specific icon you downloaded
+import { useNavigation } from '@react-navigation/native';
 
 
 const Settings= () => {
+  const navigation = useNavigation();
+  
   const menuItems = [
-    { text: 'Manage',icon: 'lightbulb-o'},
-    { text: 'Alerts', icon: 'bell' },
+    { text: 'Manage', icon: 'lightbulb-o', screen: 'Manage'},
+    { text: 'Alerts', icon: 'bell', screen: 'Alerts' },
     { text: 'Delete Account', icon: 'trash-o' },
   ];
+
+  const handleDeleteAccount = () => {
+    Alert.alert(
+      'Delete Account',
+      'Are you sure you want to delete your account?',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
+      ],
+      { cancelable: false }
+    );
+  };
 
   return (
     <View style={styles.menu}>
       <View>
         {menuItems.map((item, index) => (
-          <TouchableOpacity key={index} style={styles.menuItem}>
+          <TouchableOpacity key={index} style={styles.menuItem} onPress={() => item.text === 'Delete Account' ? handleDeleteAccount() : navigation.navigate(item.screen)}>
             <View style={styles.menuItemContent}>
               <Icon name={item.icon} size={24} color="#9336B4" />
               <Text style={styles.menuItemText}>{item.text}</Text>
