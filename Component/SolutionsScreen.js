@@ -1,27 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-
 import Icon from 'react-native-vector-icons/FontAwesome';
-import ConceptDesignPackageScreen from './ConceptDesign';
-import DesignPackage from './AdvanceDesignPackage'; // Import AdvancedConceptDesignPackageScreen
-import VisualizationPackage from './VisualizationPackage';
-import Layout from './Layout';
-import Elevation from './Elevation';
-import VirtualReality from './VirtualReality';
-import AntiTermite from './AntiTermite';
-import RainwaterHarvesting from './RainwaterHarvesting';
-import SolarService from './SolarService';
-import ConstructionAdvisory from './ConstructionAdvisory';
-import DesignIdeas from './DesignIdeas';
-import FinanceService from './FinanceService';
-import VaastuService from './VaastuService';
-
-
-
-
-
-
 
 const SolutionsScreen = ({ navigation }) => {
   const Design = [
@@ -85,93 +64,6 @@ const SolutionsScreen = ({ navigation }) => {
     </ScrollView>
   );
 };
-
-const Stack = createStackNavigator();
-
-const App = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Solutions" component={SolutionsScreen} options={{headerShown:false}} />
-    <Stack.Screen name="ConceptDesignPackage" component={ConceptDesignPackageScreen} options={{
-      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-      headerTintColor: 'white', // Change header text color
-    }} />
-    <Stack.Screen name="AdvancedConceptDesign" component={DesignPackage} options={{ // Add route for AdvancedConceptDesignPackageScreen
-      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-      headerTintColor: 'white', // Change header text color
-      title: 'Advanced Concept Design' // Set title for the screen
-    }} />
-    <Stack.Screen name="VisualizationPackage" component={VisualizationPackage} options={{ // Add route for AdvancedConceptDesignPackageScreen
-      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-      headerTintColor: 'white', // Change header text color
-      title: 'Visualization Package' // Set title for the screen
-    }} />
-   <Stack.Screen
-      name="Layout"
-      component={Layout}
-      options={{
-        headerShown: false, // Set headerShown to false for Layout screen
-      }}
-    />
-    <Stack.Screen
-      name="Elevation"
-      component={Elevation}
-      options={{
-        headerShown: false, // Set headerShown to false for Layout screen
-      }}
-    />
-
-<Stack.Screen
-      name="VirtualReality"
-      component={VirtualReality}
-      options={{
-        headerShown: false, // Set headerShown to false for Layout screen
-      }}
-    />
-     <Stack.Screen name="AntiTermite" component={AntiTermite} options={{ // Add route for AdvancedConceptDesignPackageScreen
-      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-      headerTintColor: 'white', // Change header text color
-      title: 'Anti Termite Treatment' // Set title for the screen
-    }} 
-    />
-     <Stack.Screen name="RainwaterHarvesting" component={RainwaterHarvesting} options={{ // Add route for AdvancedConceptDesignPackageScreen
-      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-      headerTintColor: 'white', // Change header text color
-      title: 'Rainwater Harvesting' // Set title for the screen
-    }} 
-    />
-    <Stack.Screen name="SolarService" component={SolarService} options={{ // Add route for AdvancedConceptDesignPackageScreen
-      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-      headerTintColor: 'white', // Change header text color
-      title: 'Solar Service' // Set title for the screen
-    }} 
-    />
-    <Stack.Screen name="ConstructionAdvisory" component={ConstructionAdvisory} options={{ // Add route for AdvancedConceptDesignPackageScreen
-      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-      headerTintColor: 'white', // Change header text color
-      title: 'Construction Advisory' // Set title for the screen
-    }} 
-    />
-    <Stack.Screen name="DesignIdeas" component={DesignIdeas} options={{ // Add route for AdvancedConceptDesignPackageScreen
-      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-      headerTintColor: 'white', // Change header text color
-      title: 'Design Gallery' // Set title for the screen
-    }} 
-    />
-    <Stack.Screen name="FinanceService" component={FinanceService} options={{ // Add route for AdvancedConceptDesignPackageScreen
-      headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
-      headerTintColor: 'white', // Change header text color
-      title: 'Finance' // Set title for the screen
-    }} 
-    />
-    <Stack.Screen name="VaastuService" component={VaastuService} options={{
-        headerShown: false, // Set headerShown to false for Layout screen
-      }}
-     
- 
-    />
-  </Stack.Navigator>
-);
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -257,4 +149,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default SolutionsScreen;
