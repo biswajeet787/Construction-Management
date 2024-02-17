@@ -227,6 +227,8 @@ const StackScreen = () => {
           component={AllScreen} // Use ImageSlider component
           options={{ headerShown: false }}
         />
+
+        {/* menu screen  */}
         <Stack.Screen
           name="PersonalDetails"
           component={PersonalDetails} // Use ImageSlider component
