@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {useState} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -9,7 +9,9 @@ import {
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/AntDesign';
-import { useNavigation , useFocusEffect} from '@react-navigation/native';
+import {useNavigation, useFocusEffect} from '@react-navigation/native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const packages = [
   {
@@ -26,9 +28,9 @@ const packages = [
   },
 ];
 
-
 const ConceptDesignPackageScreen = () => {
   const navigation = useNavigation();
+
   const images = [
     require('../image/image1.jpg'),
     require('../image/image2.jpg'),
@@ -36,7 +38,19 @@ const ConceptDesignPackageScreen = () => {
     require('../image/image4.jpg'),
   ];
 
-  const renderCarouselItem = ({ item }) => {
+  const [isIncludeDropdownOpen, setIsIncludeDropdownOpen] = useState(false);
+  const [isAddOnDropdownOpen, setIsAddOnDropdownOpen] = useState(false);
+  const [isCardVisible, setIsCardVisible] = useState(false);
+
+
+  const toggleIncludeDropdown = () => {
+    setIsIncludeDropdownOpen(!isIncludeDropdownOpen);
+  };
+  const toggleAddOnDropdown = () => {
+    setIsAddOnDropdownOpen(!isAddOnDropdownOpen);
+  };
+
+  const renderCarouselItem = ({item}) => {
     return (
       <View style={styles.carouselItemContainer}>
         <Image
@@ -47,6 +61,9 @@ const ConceptDesignPackageScreen = () => {
       </View>
     );
   };
+ 
+
+  
 
   // Use useFocusEffect to hide bottom tab bar on screen focus
   useFocusEffect(
@@ -67,9 +84,8 @@ const ConceptDesignPackageScreen = () => {
           tabBarVisible: true,
         });
       };
-    }, [navigation]) // Include navigation in the dependencies array
+    }, [navigation]), // Include navigation in the dependencies array
   );
-
 
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent}>
@@ -107,24 +123,90 @@ const ConceptDesignPackageScreen = () => {
           </View>
 
           <View>
-          <View style={styles.horizontalLine} />
+            <View style={styles.horizontalLine} />
             <View style={styles.dropdownSection}>
               <Text style={styles.sectionTitle}>WHAT IS INCLUDE</Text>
-              <TouchableOpacity
-                onPress={() => console.log('What is included clicked')}>
-                <Icon name="down" size={20} color="#5B0888" />
+              <TouchableOpacity onPress={toggleIncludeDropdown}>
+                <Icon
+                  name={isIncludeDropdownOpen ? 'up' : 'down'}
+                  size={20}
+                  color="#5B0888"
+                />
               </TouchableOpacity>
             </View>
+            {isIncludeDropdownOpen && (
+              <View style={styles.cardsContainer}>
+                {/* First card */}
+                <View style={styles.cardContainer}>
+                  <TouchableOpacity
+                    style={{flexDirection: 'row', alignItems: 'center'}}>
+                    <View style={styles.iconContainer}>
+                      <FontAwesome name="building" size={50} color="#5B0888" />
+                    </View>
+                    <View
+                      style={{marginLeft: 10, justifyContent: 'flex-start'}}>
+                      <Text style={styles.cardText}>2D Layout</Text>
+                      <Text style={styles.additionalText}>
+                        Get a conceptual 2D Layout of {'\n'} your new home as
+                        per your{'\n'} requirements.
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+
+                {/* Second card */}
+                <View style={styles.cardContainer}>
+                  <TouchableOpacity
+                    style={{flexDirection: 'row', alignItems: 'center'}}>
+                    <View style={styles.iconContainer}>
+                      <FontAwesome5 name="building" size={50} color="#5B0888" />
+                    </View>
+                    <View
+                      style={{marginLeft: 10, justifyContent: 'flex-start'}}>
+                      <Text style={styles.cardText}>3D Elevation</Text>
+                      <Text style={styles.additionalText}>
+                        Get conceptual 3D Elevations {'\n'} to visualize the
+                        exterior design {'\n'} of your home as per your {'\n'}{' '}
+                        requirements and budget
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            )}
           </View>
 
           <View>
             <View style={styles.horizontalLine} />
             <View style={styles.dropdownSection}>
               <Text style={styles.sectionTitle}>ADD-ONS</Text>
-              <TouchableOpacity onPress={() => console.log('Add-ons clicked')}>
-                <Icon name="down" size={20} color="#5B0888" />
+              <TouchableOpacity onPress={toggleAddOnDropdown}>
+                <Icon
+                  name={isAddOnDropdownOpen ? 'up' : 'down'}
+                  size={20}
+                  color="#5B0888"
+                />
               </TouchableOpacity>
             </View>
+            {isAddOnDropdownOpen && (
+              <View style={styles.addOnDropdownContent}>
+                {/* Add-on dropdown content goes here */}
+                <View style={styles.boxContainer1}>
+                  <View style={styles.box1}>
+                    <Text style={styles.boxText}>2D Layout</Text>
+                  </View>
+                  <View style={styles.boxContainer1}>
+                    <View
+                      style={[
+                        styles.box1,
+                        {width: '58%', marginLeft: 5, marginRight: 5},
+                      ]}>
+                      <Text style={styles.boxText}>3D Elevation</Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            )}
           </View>
 
           <View>
@@ -228,71 +310,52 @@ const ConceptDesignPackageScreen = () => {
             </Text>
           </View>
 
-          <View style={{ marginTop: 15, marginBottom: 10, marginLeft: 1 }}>
-  <Text style={{ fontSize: 18, color: 'black', marginBottom: 10 }}>RECOMMENDED PACKAGES FOR YOU</Text>
-</View>
+          <View style={{marginTop: 15, marginBottom: 10, marginLeft: 1}}>
+            <Text style={{fontSize: 18, color: 'black', marginBottom: 10}}>
+              RECOMMENDED PACKAGES FOR YOU
+            </Text>
+          </View>
 
-<View style={{ flexDirection: 'row', paddingHorizontal: 5 }}>
-  {/* Render the first box */}
-  <TouchableOpacity
-    style={[
-      styles.box,
-      {
-        flex: 0.4, // Adjust flex to make it smaller
-        marginRight: 25, // Add marginRight to create a gap
-        backgroundColor: '#9D76C1',
+          <View style={{flexDirection: 'row', paddingHorizontal: 5}}>
+            {/* Render the first box */}
+            <TouchableOpacity
+              style={[
+                styles.box,
+                {
+                  flex: 0.4, // Adjust flex to make it smaller
+                  marginRight: 25, // Add marginRight to create a gap
+                  backgroundColor: '#9D76C1',
+                },
+              ]}
+              onPress={() => navigation.navigate(packages[0].screen)}>
+              <View style={styles.boxContent}>
+                <View style={[styles.iconContainer, {width: 60, height: 60}]}>
+                  <Icon name={packages[0].icon} size={40} color="#5B0888" />
+                </View>
+                <Text style={styles.packageName}>{packages[0].name}</Text>
+              </View>
+            </TouchableOpacity>
 
-      },
-    ]}
-    onPress={() => navigation.navigate(packages[0].screen)}
-  >
-    <View style={styles.boxContent}>
-      <View style={[styles.iconContainer, { width: 60, height: 60 }]}>
-        <Icon
-          name={packages[0].icon}
-          size={40}
-          color="#5B0888"
-        />
-      </View>
-      <Text style={styles.packageName}>{packages[0].name}</Text>
-    </View>
-  </TouchableOpacity>
-
-  {/* Render the second box */}
-  <TouchableOpacity
-    style={[
-      styles.box,
-      {
-        flex: 0.4, // Adjust flex to make it smaller
-        backgroundColor: '#9D76C1',
-      },
-    ]}
-    onPress={() => navigation.navigate(packages[1].screen)}
-  >
-    <View style={styles.boxContent}>
-      <View style={[styles.iconContainer, { width: 60, height: 60 }]}>
-        <Icon
-          name={packages[1].icon}
-          size={40}
-          color="#5B0888"
-        />
-      </View>
-      <Text style={styles.packageName}>{packages[1].name}</Text>
-    </View>
-  </TouchableOpacity>
-</View>
-{/* <TouchableOpacity
-            style={styles.bottomButton}
-            onPress={() => console.log('Button pressed')} // Change this to your desired functionality
-          >
-            <Text style={styles.bottomButtonText}>Your Button</Text>
-          </TouchableOpacity> */}
-
-
-
+            {/* Render the second box */}
+            <TouchableOpacity
+              style={[
+                styles.box,
+                {
+                  flex: 0.4, // Adjust flex to make it smaller
+                  backgroundColor: '#9D76C1',
+                },
+              ]}
+              onPress={() => navigation.navigate(packages[1].screen)}>
+              <View style={styles.boxContent}>
+                <View style={[styles.iconContainer, {width: 60, height: 60}]}>
+                  <Icon name={packages[1].icon} size={40} color="#5B0888" />
+                </View>
+                <Text style={styles.packageName}>{packages[1].name}</Text>
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
-      
+      </View>
     </ScrollView>
   );
 };
@@ -446,7 +509,7 @@ const styles = StyleSheet.create({
   },
   box: {
     width: 160, // Adjust width of the container
-    height: 160, // Adjust height of the container
+    height: 170, // Adjust height of the container
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#9D76C1',
@@ -466,15 +529,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 5, // Adjust spacing between icon and text
   },
-  iconContainer: {
-    width: 60, // Adjust width of the icon container
-    height: 60, // Adjust height of the icon container
-    borderRadius: 30, // Adjust borderRadius to make it round
-    backgroundColor: '#FFEAD2',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 5, // Adjust spacing between icon and text
-  },
+
   bottomButton: {
     backgroundColor: '#713ABE',
     alignItems: 'center',
@@ -488,6 +543,70 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+
+  cardsContainer: {
+    marginTop: 10, // Add marginTop for separation from other sections
+  },
+  cardContainer: {
+    backgroundColor: 'white',
+    height: 130,
+    width: '100%',
+    borderRadius: 15,
+    flexDirection: 'row',
+    //justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    padding: 8,
+    borderColor: 'grey', // Add border color to the card container
+    borderWidth: 1, // Add border width for the card container
+  },
+  iconContainer: {
+    height: 100,
+    width: 100,
+    backgroundColor: '#FFEAD2',
+    borderRadius: 50, // Make it a perfect circle
+    alignItems: 'center', // Center the icon horizontally
+    justifyContent: 'center', // Center the icon vertically
+    marginLeft: 5,
+    borderColor: '#fff',
+    borderColor: '#9D76C1', // Add border color to the icon container
+    borderWidth: 1, // Add border width for the icon container
+  },
+  cardText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'black',
+    marginLeft: 5,
+  },
+  additionalText: {
+    fontSize: 14,
+    color: 'black',
+    marginTop: 10,
+    marginLeft: 5,
+  },
+
+  boxContainer1: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 8, // Add margin bottom for separation between boxes
+  },
+  box1: {
+    //flex:1,
+    width: '35%', // Adjust width of the box
+    height: 45, // Adjust height of the box
+    backgroundColor: '#F3F4F6', // Adjust background color of the box
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20, // Adjust border radius of the box to make it half of the height
+    borderWidth: 2, // Add border width for the box
+    borderColor: '#9D76C1', // Add border color for the box for the box
+    marginLeft: 5,
+  },
+  boxText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333', // Adjust text color of the box
   },
 });
 
