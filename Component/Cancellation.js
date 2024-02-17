@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const FAQs= () => {
+const Cancellation = () => {
   return (
     <View >
-      <Text >!</Text>
+      <Text></Text>
     </View>
   );
 };
 
 
-
-export default FAQs;
+export default Cancellation;

@@ -206,14 +206,15 @@ const Expancedetails = () => {
         margin: 5,
   },
         text: {
-          position: 'absolute',
+        position: 'absolute',
         top: -5,
         left: 15,
         paddingHorizontal: 5,
         color: 'black',
         zIndex: 1,
         margin: 5,
-        backgroundColor:'white',
+        backgroundColor:'#fff'
+   
   },
         textInput: {
           borderWidth: 1,

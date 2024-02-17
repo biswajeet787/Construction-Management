@@ -6,6 +6,7 @@ import {
   Image,
   StyleSheet,
   ScrollView,
+  Alert,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -54,6 +55,24 @@ const MenuScreen = () => {
       navigation.navigate('Settings');
     } else if (item.name === 'About') {
       navigation.navigate('About');
+  }else if (item.name === 'Log out') {
+    // Show alert when Log out is clicked
+    Alert.alert(
+      'Log Out',
+      'Are you sure you want to log out?',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {
+          text: 'LOG OUT',
+          onPress: () => console.log('OK Pressed'), // You can add your log out logic here
+        },
+      ],
+      {cancelable: false},
+    );
   }
   };
 
@@ -80,6 +99,7 @@ const MenuScreen = () => {
             style={styles.profileImage}
             resizeMode="cover"
           />
+           <Text style={styles.name}>User</Text>
         </View>
         <View style={styles.menuText}>
             {menuItems.map((item, index) => (
@@ -161,6 +181,12 @@ const styles = StyleSheet.create({
   menu1:{
     flex:2,
     //padding:25
+
+  },
+  name:{
+    fontSize:15,
+    bottom:70,
+    color:'black'
 
   },
   heading: {
