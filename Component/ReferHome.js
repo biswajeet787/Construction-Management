@@ -42,6 +42,7 @@ const ReferPartner = () => {
           <Text style={styles.buttonText}>GET STARTED</Text>
           <Icon name="right" size={23} color="black" style={styles.arrow} />
         </TouchableOpacity>
+        
       </View>
     </View>
   );
@@ -79,9 +80,9 @@ const styles = StyleSheet.create({
   getStartedButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#EEF5FF',
     padding: 10,
-    borderRadius: 8,
+    borderRadius: 10,
     margin: 10,
     //justifyContent: 'space-between',
   },

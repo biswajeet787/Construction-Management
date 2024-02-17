@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput, Button, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign'; // Import the FontAwesome icon
 
 const ReportProblem = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -57,11 +58,11 @@ const ReportProblem = () => {
             underlineColorAndroid="transparent"
           />
         </View>
-        {/* <View style={styles.textContainer}>
+        <View style={styles.textContainer}>
           <Text style={styles.text1}>Upload a Screenshot of the Issue</Text>
-        </View> */}
-        <View style={styles.buttonContainer}>
-          <Button title="REPORT ISSUE" onPress={handleSubmit} disabled={!isButtonEnabled} />
+           <TouchableOpacity onPress={() => console.log("Icon Pressed")}>
+            <Icon name="plussquareo" size={160} color="#8b0888" style={{ marginBottom: 10 }} />
+          </TouchableOpacity>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -130,13 +131,13 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   textInput: {
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: 'black', // Change borderColor as needed
-     paddingVertical: 100,
-    // paddingHorizontal: 150,
-    //heigh:100,
+     paddingVertical: 80,
+    //  paddingHorizontal: 150,
+    // heigh:100,
     width:400,
-    borderRadius: 10,
+    borderRadius: 20,
     fontSize: 16,
     marginTop: 10,
     margin: 10,
@@ -149,11 +150,13 @@ const styles = StyleSheet.create({
   text1:{
     fontSize:20,
     fontWeight:'bold',
+    color:'black'
   },
   buttonContainer: {
     alignSelf: 'center',
     marginRight: 20,
     marginTop: 'auto', // Push the button to the bottom
+    borderRadius:100,
   },
 });
 

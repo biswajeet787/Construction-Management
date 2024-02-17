@@ -1,32 +1,34 @@
 import React from 'react';
 import { View, FlatList, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the icon library
+import {useNavigation} from '@react-navigation/native';
 
 const data = [
-  { id: '1', name: 'Concept Design', icon: 'home' },
-  { id: '2', name: 'Advanced concept Design', icon: 'rocket' },
-  { id: '3', name: 'Visualization Packages', icon: 'picture-o' },
-  { id: '4', name: '2D Layout Services', icon: 'file-text-o' },
-  { id: '5', name: '3D Elevation Services', icon: 'cubes' },
-  { id: '6', name: 'Vitual Reality Experience', icon: 'eye' },
-  { id: '7', name: 'Design Ideas', icon: 'lightbulb-o' },
-  { id: '8', name: 'Vaastu Services', icon: 'compass' },
-  { id: '9', name: 'Construction Advisory', icon: 'wrench' },
-  { id: '10', name: 'Anti Termite Treatment', icon: 'bug' },
-  { id: '11', name: 'Financial Service', icon: 'money' },
-  { id: '12', name: 'Rainwater Harvesting', icon: 'tint' },
-  { id: '13', name: 'Solar Service', icon: 'sun-o' },
-  { id: '14', name: 'Concept Design', icon: 'home' },
-  { id: '15', name: 'Concept Design', icon: 'home' },
+  { id: '1', name: 'Concept Design', icon: 'home',screen:'ConceptDesignPackage' },
+  { id: '2', name: 'Advanced concept Design', icon: 'rocket',screen:'AdvancedConceptDesign' },
+  { id: '3', name: 'Visualization Packages', icon: 'picture-o',screen:'VisualizationPackage' },
+  { id: '4', name: '2D Layout Services', icon: 'file-text-o',screen:'Layout' },
+  { id: '5', name: '3D Elevation Services', icon: 'cubes',screen:'Elevation' },
+  { id: '6', name: 'Vitual Reality Experience', icon: 'eye',screen:'VirtualReality' },
+  { id: '7', name: 'Design Ideas', icon: 'lightbulb-o',screen:'DesignIdeas' },
+  { id: '8', name: 'Vaastu Services', icon: 'compass',screen:'VaastuService' },
+  { id: '9', name: 'Construction Advisory', icon: 'wrench',screen:'ConstructionAdvisory' },
+  { id: '10', name: 'Anti Termite Treatment', icon: 'bug',screen:'AntiTermite' },
+  { id: '11', name: 'Financial Service', icon: 'money',screen:'FinanceService' },
+  { id: '12', name: 'Rainwater Harvesting', icon: 'tint',screen:'RainwaterHarvesting' },
+  { id: '13', name: 'Solar Service', icon: 'sun-o',screen:'SolarService' },
+  { id: '14', name: 'Concept Design', icon: 'home',screen:'ConceptDesignPackage' },
+  { id: '15', name: 'Concept Design', icon: 'home',screen:'ConceptDesignPackage' },
 ];
 
 const Grid = () => {
+  const navigation = useNavigation();
   const renderItem = ({ item,index}) => (
     <View style={styles.item}>
       <View style={[styles.iconContainer,index<3?styles.blueBackground:null]}>
         <Icon name={item.icon} size={35} color="#5B0888" />
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>navigation.navigate(item.screen)}>
         <Text style={styles.itemText}>{item.name}</Text>
       </TouchableOpacity>
     </View>

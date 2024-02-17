@@ -7,9 +7,9 @@ const Support = () => {
   const navigation = useNavigation();
 
   const menuItems = [
-    { text: 'FAQs', icon: 'weixin', screen: 'FAQsScreen' },
-    { text: 'Report a Problem', icon: 'exclamation-circle', screen: 'ReportProblemScreen' },
-    { text: 'Issue History', icon: 'history', screen: 'IssueHistoryScreen' },
+    { text: 'FAQs', icon: 'weixin', screen: 'FAQs' },
+    { text: 'Report a Problem', icon: 'exclamation-circle', screen: 'Report a Problem' },
+    { text: 'Issue History', icon: 'history', screen: 'Issue History' },
   ];
 
   const handleMenuItemPress = (screen) => {
