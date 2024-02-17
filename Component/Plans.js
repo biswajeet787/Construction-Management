@@ -81,6 +81,7 @@ const PlansScreen = () => {
                     paddingVertical: 15,
                     paddingHorizontal: 130,
                     marginBottom: 10,
+                    borderRadius:10,
                     padding: 5,
                     marginLeft: 10,
                     marginRight: 10,
