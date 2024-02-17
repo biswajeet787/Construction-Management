@@ -1,14 +1,3 @@
-// import React from 'react';
-// import { ScrollView, Text } from 'react-native';
-
-// const OrderScreen = () => (
-//   <ScrollView>
-//     <Text>Orders Screen</Text>
-//   </ScrollView>
-// );
-
-// export default OrderScreen;
-
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';

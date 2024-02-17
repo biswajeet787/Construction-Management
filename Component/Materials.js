@@ -97,13 +97,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingVertical:10,  // Adjust the vertical padding
     paddingHorizontal: 40, // Adjust the horizontal padding
-
+    borderRadius:10,
   },
   buttonText: {
     color: 'orange',
     fontSize: 19,
     margin: 1,
     fontWeight: 'bold',
+    
   },
 });
 

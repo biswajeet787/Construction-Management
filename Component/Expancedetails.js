@@ -213,6 +213,7 @@ const Expancedetails = () => {
         color: 'black',
         zIndex: 1,
         margin: 5,
+        backgroundColor:'white',
   },
         textInput: {
           borderWidth: 1,

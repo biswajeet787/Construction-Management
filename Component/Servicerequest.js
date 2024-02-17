@@ -166,9 +166,9 @@ import React, { useState } from 'react';
       backgroundColor: '#C499F3',
       height:40,
       padding: 8,
-      paddingRight:10,
-      paddingLeft:10,
-      margin: 10,
+      paddingRight:15,
+      paddingLeft:15,
+      margin: 5,
       borderRadius:10,
     },
     buttontext:{
