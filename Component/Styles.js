@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import LoaderPage from './LoaderPage';
+
 
 const StylesScreen= () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello, world!</Text>
+      {/* <Text style={styles.text}>Hello, world!</Text> */}
     </View>
   );
 };

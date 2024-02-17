@@ -39,6 +39,7 @@ import SearchScreen from './SearchScreen';
 import MaterialSearch from './HomeScreenInnerPage/MaterialSearch';
 import ExpertSearch from './HomeScreenInnerPage/ExpertSearch';
 import HomeScreen from './HomeScreen';
+import MeterialScreen from'./Materials';
 
 import Alerts from './Alerts';
 import Manage from './Manage';
@@ -312,7 +313,7 @@ const StackScreen = () => {
         />
         <Stack.Screen
           name="MaterialsScreen"
-          component={ArticlesScreen} // Use ImageSlider component
+          component={MeterialScreen} // Use ImageSlider component
           options={{
             headerStyle: { backgroundColor: '#713ABE', height:100, borderBottomLeftRadius:15, borderBottomRightRadius:15  }, // Change header background color
             headerTintColor: 'white', // Change header text color

@@ -179,7 +179,7 @@ const Expancedetails = () => {
   },
         card: {
           width:370,
-        padding: 15,
+        padding: 10,
         backgroundColor: 'white',
         borderRadius: 10,
         shadowColor: '#000',
