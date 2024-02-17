@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, SafeAreaView, Image, TouchableOpacity, StyleSheet, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook
 
 const App = () => {
   const data = [
@@ -27,6 +28,8 @@ const App = () => {
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
+  const navigation = useNavigation(); // Get navigation object
+
   const handleSwipe = () => {
     if (touchStartX - touchEndX > 50 && activeIndex < data.length - 1) {
       setActiveIndex(activeIndex + 1);
@@ -51,7 +54,6 @@ const App = () => {
       </TouchableOpacity>
     );
   };
-  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -72,7 +74,7 @@ const App = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Solutions')}>
           <Text style={styles.buttonText}>SKIP</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => setActiveIndex((prevIndex) => (prevIndex < data.length - 1 ? prevIndex + 1 : 0))}>

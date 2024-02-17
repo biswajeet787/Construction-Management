@@ -16,10 +16,17 @@ const Header = () => {
 const OrderScreen = () => {
   return (
     <Tabs.Container renderHeader={Header}>
+
+      <Tabs.Tab name="SERVICE REQUESTS">
+      <Tabs.ScrollView >
+        <Servicerequest/>
+        </Tabs.ScrollView >
+
       <Tabs.Tab name="SERVICE REQUEST">
         <Tabs.ScrollView>
           <Servicerequest />
         </Tabs.ScrollView>
+
       </Tabs.Tab>
       <Tabs.Tab name="EXPENSE TRACKER">
         <Tabs.ScrollView>

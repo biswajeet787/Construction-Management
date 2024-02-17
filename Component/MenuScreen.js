@@ -87,7 +87,7 @@ const MenuScreen = () => {
 
   return (
     <ScrollView style={styles.scrollView}>
-      <View style={styles.container}>
+      {/* <View style={styles.container}> */}
       <View style={styles.menu1}>
         <Text style={styles.heading}>Menu</Text>
         <View>
@@ -140,7 +140,7 @@ const MenuScreen = () => {
       </View>
       </View>
       </View>
-      </View>
+      {/* </View> */}
     </ScrollView>
   );
 };
@@ -167,10 +167,10 @@ const styles = StyleSheet.create({
   arrowIcon: {
     marginLeft: 'auto',
   },
-  container: {
-    //flex: 3,
-    flexDirection: 'column',
-  },
+  // container: {
+  //   //flex: 3,
+  //   flexDirection: 'column',
+  // },
   menu: {
     //backgroundColor: '#AC87C5',
     padding: 25,

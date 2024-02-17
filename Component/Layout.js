@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { View, SafeAreaView, Image, TouchableOpacity, StyleSheet, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const App = () => {
+  const navigation = useNavigation();
+
   const data = [
     {
       id: '1',
@@ -52,6 +55,11 @@ const App = () => {
     );
   };
 
+  const handleSkip = () => {
+    // Navigate to the solution page
+    navigation.navigate('Solutions');
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View
@@ -71,10 +79,14 @@ const App = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleSkip}>
           <Text style={styles.buttonText}>SKIP</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => setActiveIndex((prevIndex) => (prevIndex < data.length - 1 ? prevIndex + 1 : 0))}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() =>
+            setActiveIndex((prevIndex) => (prevIndex < data.length - 1 ? prevIndex + 1 : 0))
+          }>
           <Text style={styles.buttonText}>NEXT</Text>
         </TouchableOpacity>
       </View>
