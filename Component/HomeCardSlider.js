@@ -10,6 +10,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
+import Support from './Support';
 
 
 
@@ -196,7 +197,7 @@ const HomeCardSlider = () => {
             <Text style={{color: '#5B0888'}}>Customer Care</Text> today.
           </Text>
         </View>
-        <TouchableOpacity
+        <TouchableOpacity 
           style={{
             backgroundColor: '#5B0888',
             padding: 10,

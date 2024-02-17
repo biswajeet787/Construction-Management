@@ -19,7 +19,7 @@ const ReferPartner = () => {
             {'\n'}area to start building your {'\n'}ideal home.
           </Text>
           <Image
-            source={require('../image/User.jpg')}
+            source={require('../image/User1.jpg')}
             style={styles.rawMaterialsImage}
           />
         </View>

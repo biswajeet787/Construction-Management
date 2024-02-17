@@ -14,14 +14,34 @@ import {Slider} from 'react-native-elements';
 
 export const EMI_Calculator = () => {
   const [loan, setLoan] = useState(0);
+  const [interest, setInterest] = useState(0);
+  const [tenure, setTenure] = useState(0);
 
-  const handleTextInputChange = (text) => {
+  const handleTextInputChangeForLoan = text => {
     // Parse the text input to a number
     const parsedValue = parseFloat(text);
-    
+
     // Check if it's a valid number
     if (!isNaN(parsedValue)) {
       setLoan(parsedValue);
+    }
+  };
+  const handleTextInputChangeForInterest = texts => {
+    // Parse the text input to a number
+    const parsedValues = parseFloat(texts);
+
+    // Check if it's a valid number
+    if (!isNaN(parsedValues)) {
+      setInterest(parsedValues);
+    }
+  };
+  const handleTextInputChangeForTenure = texts => {
+    // Parse the text input to a number
+    const parsedValues = parseFloat(texts);
+
+    // Check if it's a valid number
+    if (!isNaN(parsedValues)) {
+      setInterest(parsedValues);
     }
   };
   return (
@@ -48,7 +68,7 @@ export const EMI_Calculator = () => {
             style={{borderWidth: 1, borderRadius: 15, width: '50%'}}
             // value={loan.toString()}
             value={loan.toFixed(0)}
-            onChangeText={handleTextInputChange} 
+            onChangeText={handleTextInputChangeForLoan}
           />
         </View>
         <View style={{margin: 15}}>
@@ -58,11 +78,71 @@ export const EMI_Calculator = () => {
             minimumValue={100000}
             maximumValue={1000000}
             value={loan}
-            thumbTintColor='#5B0888'
-            thumbStyle={{ width: 20, height: 20 }}
+            thumbTintColor="#5B0888"
+            thumbStyle={{width: 25, height: 25}}
+            minimumTrackTintColor="#5B0888"
+            maximumTrackTintColor="orange"
+            trackStyle={{height: 10, borderRadius: 5}}
           />
-          <Text>{loan}</Text>
+          {/* <Text>{loan}</Text> */}
         </View>
+      
+      <View style={{margin: 15}}>
+        <View style={{position: 'absolute', bottom: 41, left: 15, zIndex: 1}}>
+          <Text style={{backgroundColor: '#fff'}}>Interest</Text>
+        </View>
+        <TextInput
+          placeholder="₹"
+          keyboardType="numeric"
+          style={{borderWidth: 1, borderRadius: 15, width: '50%'}}
+          // value={loan.toString()}
+          value={interest.toFixed(0)+'%'}
+          onChangeText={handleTextInputChangeForInterest}
+        />
+      </View>
+      <View style={{margin: 15}}>
+        <Slider
+          // style={{width: 300}}
+          onValueChange={Interestvalue => setInterest(Interestvalue)}
+          minimumValue={6}
+          maximumValue={20}
+          value={interest}
+          thumbTintColor="#5B0888"
+          thumbStyle={{width: 25, height: 25}}
+          minimumTrackTintColor="#5B0888"
+          maximumTrackTintColor="orange"
+          trackStyle={{height: 10, borderRadius: 5}}
+        />
+        {/* <Text>{interest}</Text> */}
+      </View>
+      <View style={{margin: 15}}>
+        <View style={{position: 'absolute', bottom: 41, left: 15, zIndex: 1}}>
+          <Text style={{backgroundColor: '#fff'}}>Loan tenure</Text>
+        </View>
+        <TextInput
+          placeholder="₹"
+          keyboardType="numeric"
+          style={{borderWidth: 1, borderRadius: 15, width: '50%'}}
+          // value={loan.toString()}
+          value={tenure.toFixed(0)}
+          onChangeText={handleTextInputChangeForTenure}
+        />
+      </View>
+      <View style={{margin: 15}}>
+        <Slider
+          // style={{width: 300}}
+          onValueChange={tenureValue => setTenure(tenureValue)}
+          minimumValue={4}
+          maximumValue={12}
+          value={tenure}
+          thumbTintColor="#5B0888"
+          thumbStyle={{width: 25, height: 25}}
+          minimumTrackTintColor="#5B0888"
+          maximumTrackTintColor="orange"
+          trackStyle={{height: 10, borderRadius: 5}}
+        />
+        {/* <Text>{tenure}</Text> */}
+      </View>
       </View>
     </View>
   );
