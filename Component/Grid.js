@@ -5,20 +5,11 @@ import {useNavigation} from '@react-navigation/native';
 
 const data = [
   { id: '1', name: 'Concept Design', icon: 'home',screen:'ConceptDesignPackage' },
-  { id: '2', name: 'Advanced concept Design', icon: 'rocket',screen:'AdvancedConceptDesign' },
-  { id: '3', name: 'Visualization Packages', icon: 'picture-o',screen:'VisualizationPackage' },
   { id: '4', name: '2D Layout Services', icon: 'file-text-o',screen:'Layout' },
-  { id: '5', name: '3D Elevation Services', icon: 'cubes',screen:'Elevation' },
-  { id: '6', name: 'Vitual Reality Experience', icon: 'eye',screen:'VirtualReality' },
   { id: '7', name: 'Design Ideas', icon: 'lightbulb-o',screen:'DesignIdeas' },
   { id: '8', name: 'Vaastu Services', icon: 'compass',screen:'VaastuService' },
-  { id: '9', name: 'Construction Advisory', icon: 'wrench',screen:'ConstructionAdvisory' },
-  { id: '10', name: 'Anti Termite Treatment', icon: 'bug',screen:'AntiTermite' },
-  { id: '11', name: 'Financial Service', icon: 'money',screen:'FinanceService' },
   { id: '12', name: 'Rainwater Harvesting', icon: 'tint',screen:'RainwaterHarvesting' },
   { id: '13', name: 'Solar Service', icon: 'sun-o',screen:'SolarService' },
-  { id: '14', name: 'Concept Design', icon: 'home',screen:'ConceptDesignPackage' },
-  { id: '15', name: 'Concept Design', icon: 'home',screen:'ConceptDesignPackage' },
 ];
 
 const Grid = () => {

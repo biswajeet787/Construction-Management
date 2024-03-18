@@ -10,7 +10,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
-import Support from './Support';
+
 
 
 
@@ -39,32 +39,11 @@ const HomeCardSlider = () => {
 
   const data = [
     {
-      iconName: 'bank',
-      id: 1,
-      text: 'Budgeting',
-      subText: 'Tool to manage homebuilding expenses better',
-      screen: 'Budgeting',
-    },
-    {
-      iconName: 'calculator',
-      id: 2,
-      text: 'EMI Calculator',
-      subText: 'Calculator EMI based on the loan period and interest rate',
-      screen: 'EMI_Calculator',
-    },
-    {
       iconName: 'suitcase',
       id: 3,
       text: 'Expense Tracker',
       subText: 'Tool to track, record and monitor construction expenses',
       screen: 'Expensetrack',
-    },
-    {
-      iconName: 'files-o',
-      id: 4,
-      text: 'Permissions',
-      subText: 'Checklists of permissions required for homebuilding',
-      screen: 'Permissions',
     },
     {
       iconName: 'slideshare',
@@ -74,13 +53,6 @@ const HomeCardSlider = () => {
       screen: 'DesignIdeas',
     },
     {
-      iconName: 'flash',
-      id: 6,
-      text: 'Style Quiz',
-      subText: 'Quiz to identify your design preference for home exteriors',
-      screen: 'StyleQuiz',
-    },
-    {
       iconName: 'fort-awesome',
       id: 7,
       text: 'Styles',
@@ -88,33 +60,11 @@ const HomeCardSlider = () => {
       screen: 'StylesCard',
     },
     {
-      iconName: 'compass',
-      id: 8,
-      text: 'Vaastu Compass',
-      subText: 'Tool to check Vaastu compliance of the home',
-      screen: 'EventsCard',
-    },
-    {
-      iconName: 'magic',
-      id: 9,
-      text: 'Vaastu Score',
-      subText: 'Detailed report to check Vaastu compliance of the home',
-      screen: 'VaastuScore',
-    },
-    {
       iconName: 'hdd-o',
       id: 10,
       text: 'Solar Savings Calculator',
       subText: 'Calculator to estimate solar potential and savings based',
       screen: 'SolarSavingsCalculator',
-    },
-    {
-      iconName: 'bell',
-      id: 11,
-      text: 'Events',
-      subText:
-        'Informational sessions by industry experts on homebuilding process',
-      screen: 'EventsCard',
     },
   ];
   return (

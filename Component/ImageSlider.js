@@ -39,7 +39,7 @@ const ImageSlider = () => {
       scrollToIndex(nextIndex);
       setActiveIndex(nextIndex);
     } else {
-      navigation.navigate('RegisterPage');
+      navigation.navigate('AllScreen');
     }
   };
 
@@ -52,7 +52,7 @@ const ImageSlider = () => {
   const renderSkipButton = () => {
     if (activeIndex < images.length - 1) {
       return (
-        <TouchableOpacity style={styles.skipButton} onPress={() => navigation.navigate('RegisterPage')}>
+        <TouchableOpacity style={styles.skipButton} onPress={() => navigation.navigate('AllScreen')}>
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
       );

@@ -5,11 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const SolutionsScreen = ({ navigation }) => {
   const Design = [
     { id: '1', name: 'Concept Design Package', icon: 'home', screen: 'ConceptDesignPackage' },
-    { id: '2', name: 'Advanced concept Design', icon: 'rocket', screen: 'AdvancedConceptDesign' },
-    { id: '3', name: 'Visualization Packages', icon: 'picture-o', screen:'VisualizationPackage'},
     { id: '4', name: '2D Layout Services', icon: 'file-text-o' , screen:'Layout'},
-    { id: '5', name: '3D Elevation Services', icon: 'cubes', screen:'Elevation' },
-    { id: '6', name: 'Virtual Reality Experience', icon: 'eye', screen:'VirtualReality'},
     { id: '7', name: 'Design Ideas', icon: 'lightbulb-o',screen:'DesignIdeas' },
     { id: '8', name: 'Vaastu Services', icon: 'compass',screen:'VaastuService' },
   ];
@@ -19,8 +15,6 @@ const SolutionsScreen = ({ navigation }) => {
   ];
 
   const Speciality = [
-    { id: '1', name: 'Anti Termite Treatment', icon: 'bug',screen:'AntiTermite' },
-    { id: '2', name: 'Financial Service', icon: 'money', screen:'FinanceService' },
     { id: '3', name: 'Rainwater Harvesting', icon: 'tint',screen:'RainwaterHarvesting' },
     { id: '4', name: 'Solar Service', icon: 'sun-o' ,screen:'SolarService'},
   ];
