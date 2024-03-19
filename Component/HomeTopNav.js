@@ -26,7 +26,7 @@ const HomeTopNav = () => {
       <View style={styles.navContainer}>
         <View style={styles.navItem}>
           <Image
-            source={require('../image/DLB.png')}
+            source={require('../image/homeImage.png')}
             resizeMode="contain"
             style={{height: '100%'}}
           />

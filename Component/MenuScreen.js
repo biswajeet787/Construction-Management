@@ -27,8 +27,7 @@ const MenuScreen = () => {
       icon: 'user',
       subItems: [{name: 'Personal Details', screen: 'PersonalDetails'}],
     },
-    {name: 'My Sites', icon: 'globe'},
-    {name: 'Rewards & referrals', icon: 'gift'},
+    
     {name: 'Support', icon: 'headphones'},
     {name: 'Settings', icon: 'cogs'},
     {name: 'About', icon: 'info-circle'},

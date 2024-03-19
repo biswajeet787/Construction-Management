@@ -14,6 +14,7 @@ import {useNavigation} from '@react-navigation/native';
 import ImagePage from './ImagePage';
 import LoaderPage from './LoaderPage';
 import LoginScreen from './LoginScreen';
+import LoginCRM from './LoginCRM';
 import OTPScreen from './OTPScreen';
 import ImageSlider from './ImageSlider';
 import AllScreen from './AllScreen';
@@ -39,6 +40,13 @@ import MaterialSearch from './HomeScreenInnerPage/MaterialSearch';
 import ExpertSearch from './HomeScreenInnerPage/ExpertSearch';
 import ExpertOfAllServices from './HomeScreenInnerPage/ExpertOfAllServices';
 import DesignExpert1 from './HomeScreenInnerPage/ExpertBook/DesignExpert1';
+import DesignExpert2 from './HomeScreenInnerPage/ExpertBook/DesignExpert2';
+import PlumbingExpert1 from './HomeScreenInnerPage/ExpertBook/PlumbingExpert1';
+import PlumbingExpert2 from './HomeScreenInnerPage/ExpertBook/plumbingExpert2';
+import CivilExpert1 from './HomeScreenInnerPage/ExpertBook/CivilExpert1';
+import CivilExpert2 from './HomeScreenInnerPage/ExpertBook/CivilExpert2';
+import ElectricalExpert1 from './HomeScreenInnerPage/ExpertBook/ElectricalExpert1';
+import ElectricalExpert2 from './HomeScreenInnerPage/ExpertBook/ElectricalExpert2';
 import HomeScreen from './HomeScreen';
 import MeterialScreen from'./Materials';
 
@@ -98,6 +106,11 @@ const StackScreen = () => {
       <Stack.Screen
         name="SignUpPage" // Correct the typo here from 'LoinScreen' to 'LoginScreen'
         component={LoginScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="LoginCRM" // Correct the typo here from 'LoinScreen' to 'LoginScreen'
+        component={LoginCRM}
         options={{headerShown: false}}
       />
       <Stack.Screen
@@ -445,6 +458,76 @@ const StackScreen = () => {
           headerStyle: { backgroundColor: '#5B0888'}, 
           headerTintColor: 'white', 
           title: 'Design Expert',
+          headerTitleAlign: 'center'
+        }}
+      />
+      <Stack.Screen
+        name="DesignExpert2"
+        component={DesignExpert2}
+        options={{ 
+          headerStyle: { backgroundColor: '#5B0888'}, 
+          headerTintColor: 'white', 
+          title: 'Design Expert',
+          headerTitleAlign: 'center'
+        }}
+      />
+      <Stack.Screen
+        name="PlumbingExpert1"
+        component={PlumbingExpert1}
+        options={{ 
+          headerStyle: { backgroundColor: '#5B0888'}, 
+          headerTintColor: 'white', 
+          title: 'Plumbing Expert',
+          headerTitleAlign: 'center'
+        }}
+      />
+      <Stack.Screen
+        name="PlumbingExpert2"
+        component={PlumbingExpert2}
+        options={{ 
+          headerStyle: { backgroundColor: '#5B0888'}, 
+          headerTintColor: 'white', 
+          title: 'Plumbing Expert',
+          headerTitleAlign: 'center'
+        }}
+      />
+      <Stack.Screen
+        name="CivilExpert1"
+        component={CivilExpert1}
+        options={{ 
+          headerStyle: { backgroundColor: '#5B0888'}, 
+          headerTintColor: 'white', 
+          title: 'Civil Expert',
+          headerTitleAlign: 'center'
+        }}
+      />
+      <Stack.Screen
+        name="CivilExpert2"
+        component={CivilExpert2}
+        options={{ 
+          headerStyle: { backgroundColor: '#5B0888'}, 
+          headerTintColor: 'white', 
+          title: 'Civil Expert',
+          headerTitleAlign: 'center'
+        }}
+      />
+      <Stack.Screen
+        name="ElectricalExpert1"
+        component={ElectricalExpert1}
+        options={{ 
+          headerStyle: { backgroundColor: '#5B0888'}, 
+          headerTintColor: 'white', 
+          title: 'Electrical Expert',
+          headerTitleAlign: 'center'
+        }}
+      />
+      <Stack.Screen
+        name="ElectricalExpert2"
+        component={ElectricalExpert2}
+        options={{ 
+          headerStyle: { backgroundColor: '#5B0888'}, 
+          headerTintColor: 'white', 
+          title: 'Electrical Expert',
           headerTitleAlign: 'center'
         }}
       />

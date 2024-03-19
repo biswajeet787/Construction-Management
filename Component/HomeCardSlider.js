@@ -38,13 +38,7 @@ const HomeCardSlider = () => {
   }, [currentIndex, scrollToNextCards]); // Add currentIndex to the dependency array to avoid potential issues
 
   const data = [
-    {
-      iconName: 'suitcase',
-      id: 3,
-      text: 'Expense Tracker',
-      subText: 'Tool to track, record and monitor construction expenses',
-      screen: 'Expensetrack',
-    },
+    
     {
       iconName: 'slideshare',
       id: 5,

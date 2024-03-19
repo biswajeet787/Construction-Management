@@ -18,7 +18,7 @@ const ImagePage = ({ navigation }) => {
     <View style={styling.container}>
       {image ? (
         <Image
-        source={require('../image/DLB.png')} // Adjust the path as per your project structure
+        source={require('../image/homeImage.png')} // Adjust the path as per your project structure
         style={styling.images}
         resizeMode="contain"
       />

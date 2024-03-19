@@ -5,10 +5,9 @@ import {useNavigation} from '@react-navigation/native';
 
 const data = [
   { id: '1', name: 'Concept Design', icon: 'home',screen:'ConceptDesignPackage' },
-  { id: '4', name: '2D Layout Services', icon: 'file-text-o',screen:'Layout' },
-  { id: '7', name: 'Design Ideas', icon: 'lightbulb-o',screen:'DesignIdeas' },
+  
   { id: '8', name: 'Vaastu Services', icon: 'compass',screen:'VaastuService' },
-  { id: '12', name: 'Rainwater Harvesting', icon: 'tint',screen:'RainwaterHarvesting' },
+  
   { id: '13', name: 'Solar Service', icon: 'sun-o',screen:'SolarService' },
 ];
 

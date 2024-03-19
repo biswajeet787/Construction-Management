@@ -39,20 +39,7 @@ const Card = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={Styles.text}>
-        <TouchableOpacity>
-          <View style={Styles.textIconRow}>
-            <Text style={Styles.textSize}>
-              Get Personalized Solution Offerings{'\n'}
-              <Text style={[Styles.textColor, Styles.textSite]}>
-                Create Your Site {'>'}
-              </Text>
-            </Text>
-
-            <FontAwesome6 name="map-location-dot" size={25} color="#5B0888" />
-          </View>
-        </TouchableOpacity>
-      </View>
+      
     </View>
   );
 };

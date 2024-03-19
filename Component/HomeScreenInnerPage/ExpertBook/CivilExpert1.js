@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-
 import React from 'react';
 import { AirbnbRating } from 'react-native-elements';
 
-const DesignExpert1 = () => {
+const CivilExpert1 = () => {
   
 
   return (
@@ -17,9 +17,9 @@ const DesignExpert1 = () => {
           Personal Details
         </Text>
         <View style={styles.data}>
-          <Text style={{ color: 'black', fontSize: 18 }}>Mr Rakesh Panda</Text>
+          <Text style={{ color: 'black', fontSize: 18 }}>Suryakanta  Das</Text>
           <Text style={{ color: 'black', fontSize: 15 }}>
-            Designation: Interior Designer
+            Designation: Chief Engineer
           </Text>
         </View>
         <View style={{ alignItems: 'center', marginTop: 15 }}>
@@ -34,7 +34,7 @@ const DesignExpert1 = () => {
                     fontWeight: 'bold',
                     top: 5,
                   }}>
-                  9:00-12:00
+                  10:00-12:00
                 </Text>
               </TouchableOpacity>
             </View>
@@ -47,7 +47,7 @@ const DesignExpert1 = () => {
                     fontWeight: 'bold',
                     top: 5,
                   }}>
-                  5:00-7:00
+                  4:00-7:00
                 </Text>
               </TouchableOpacity>
             </View>
@@ -57,9 +57,9 @@ const DesignExpert1 = () => {
       <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'center' }}>
         <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 18, bottom: 2, right: 5 }}>Rating:</Text>
         <AirbnbRating
-          defaultRating={3}
+          
           selectedColor="#5B0888"
-          defaultRating={4}
+          defaultRating={3}
           reviewSize={14}
           reviewColor="#5B0888"
           size={18}
@@ -74,7 +74,7 @@ const DesignExpert1 = () => {
   );
 };
 
-export default DesignExpert1;
+export default CivilExpert1;
 
 const styles = StyleSheet.create({
   image: {

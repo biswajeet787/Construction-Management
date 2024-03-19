@@ -56,10 +56,10 @@ const ExpertOfAllServices = () => {
                     color: 'black',
                     fontWeight: 'bold',
                   }}>
-                  Mr Jack{'\n'}
+                  Amit Sahoo{'\n'}
                   <Text style={{fontWeight: '400'}}>Design coordinator</Text>
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('DesignExpert2')}>
                   <View style={styles.BookNow}>
                     <Text style={{textAlign: 'center', color: '#fff'}}>
                       Book Now
@@ -86,10 +86,10 @@ const ExpertOfAllServices = () => {
                     color: 'black',
                     fontWeight: 'bold',
                   }}>
-                  Mr Jack{'\n'}
+                  Anwesh{'\n'}
                   <Text style={{fontWeight: '400'}}>Plumber</Text>
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('PlumbingExpert1')}>
                   <View style={styles.BookNow}>
                     <Text style={{textAlign: 'center', color: '#fff'}}>
                       Book Now
@@ -111,10 +111,10 @@ const ExpertOfAllServices = () => {
                     color: 'black',
                     fontWeight: 'bold',
                   }}>
-                  Mr Jack{'\n'}
+                  Sangram{'\n'}
                   <Text style={{fontWeight: '400'}}>Master plumbers</Text>
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('PlumbingExpert2')}>
                   <View style={styles.BookNow}>
                     <Text style={{textAlign: 'center', color: '#fff'}}>
                       Book Now
@@ -141,10 +141,10 @@ const ExpertOfAllServices = () => {
                     color: 'black',
                     fontWeight: 'bold',
                   }}>
-                  Mr Jack{'\n'}
+                  Suryakanta{'\n'}
                   <Text style={{fontWeight: '400'}}>Chief Engineer</Text>
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('CivilExpert1')}>
                   <View style={styles.BookNow}>
                     <Text style={{textAlign: 'center', color: '#fff'}}>
                       Book Now
@@ -166,10 +166,10 @@ const ExpertOfAllServices = () => {
                     color: 'black',
                     fontWeight: 'bold',
                   }}>
-                  Mr Jack{'\n'}
+                  Sanket{'\n'}
                   <Text style={{fontWeight: '400'}}>Structural Engineer</Text>
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('CivilExpert2')}>
                   <View style={styles.BookNow}>
                     <Text style={{textAlign: 'center', color: '#fff'}}>
                       Book Now
@@ -196,10 +196,10 @@ const ExpertOfAllServices = () => {
                     color: 'black',
                     fontWeight: 'bold',
                   }}>
-                  Mr Jack{'\n'}
+                  Vishal{'\n'}
                   <Text style={{fontWeight: '400'}}>Electrical Engineer</Text>
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('ElectricalExpert1')}>
                   <View style={styles.BookNow}>
                     <Text style={{textAlign: 'center', color: '#fff'}}>
                       Book Now
@@ -221,10 +221,10 @@ const ExpertOfAllServices = () => {
                     color: 'black',
                     fontWeight: 'bold',
                   }}>
-                  Mr Jack{'\n'}
+                  Deepak{'\n'}
                   <Text style={{fontWeight: '400'}}>Electrician</Text>
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('ElectricalExpert2')}>
                   <View style={styles.BookNow}>
                     <Text style={{textAlign: 'center', color: '#fff'}}>
                       Book Now

@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-
 import React from 'react';
 import { AirbnbRating } from 'react-native-elements';
 
-const DesignExpert1 = () => {
+const ElectricalExpert2 = () => {
   
 
   return (
@@ -17,9 +17,9 @@ const DesignExpert1 = () => {
           Personal Details
         </Text>
         <View style={styles.data}>
-          <Text style={{ color: 'black', fontSize: 18 }}>Mr Rakesh Panda</Text>
+          <Text style={{ color: 'black', fontSize: 18 }}>Deepak Sahu</Text>
           <Text style={{ color: 'black', fontSize: 15 }}>
-            Designation: Interior Designer
+            Designation: Electrician
           </Text>
         </View>
         <View style={{ alignItems: 'center', marginTop: 15 }}>
@@ -34,7 +34,7 @@ const DesignExpert1 = () => {
                     fontWeight: 'bold',
                     top: 5,
                   }}>
-                  9:00-12:00
+                  10:00-12:00
                 </Text>
               </TouchableOpacity>
             </View>
@@ -47,7 +47,7 @@ const DesignExpert1 = () => {
                     fontWeight: 'bold',
                     top: 5,
                   }}>
-                  5:00-7:00
+                  4:00-7:00
                 </Text>
               </TouchableOpacity>
             </View>
@@ -74,7 +74,7 @@ const DesignExpert1 = () => {
   );
 };
 
-export default DesignExpert1;
+export default ElectricalExpert2;
 
 const styles = StyleSheet.create({
   image: {

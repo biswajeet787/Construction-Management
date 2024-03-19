@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const SolutionsScreen = ({ navigation }) => {
   const Design = [
     { id: '1', name: 'Concept Design Package', icon: 'home', screen: 'ConceptDesignPackage' },
-    { id: '4', name: '2D Layout Services', icon: 'file-text-o' , screen:'Layout'},
+    
     { id: '7', name: 'Design Ideas', icon: 'lightbulb-o',screen:'DesignIdeas' },
     { id: '8', name: 'Vaastu Services', icon: 'compass',screen:'VaastuService' },
   ];

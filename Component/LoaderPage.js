@@ -32,7 +32,7 @@ const LoaderPage = () => {
 
     // Navigate to the login page after 2 seconds (adjust as needed)
     setTimeout(() => {
-      navigation.replace('SignUpPage');
+      navigation.replace('LoginCRM');
     }, 2000);
   };
 
