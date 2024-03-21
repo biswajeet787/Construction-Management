@@ -215,7 +215,11 @@ const StackScreen = () => {
       <Stack.Screen
         name="ExpertSearch"
         component={ExpertSearch} // Use Material component
-        options={{header: () => <CustomHeaderForMaterial />}}
+        options={{
+      title:'Expert',
+      headerTintColor:'#fff',
+      headerTitleAlign:"center",
+    headerStyle:{backgroundColor:'#5B0888'}}}
       />
    
       

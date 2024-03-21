@@ -1,9 +1,29 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { AirbnbRating } from 'react-native-elements';
+import SweetAlert from 'react-native-sweet-alert';
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 
 const DesignExpert1 = () => {
   
+  const handleBookNow = async () => {
+
+    const ref= firestore().collection('bookings');
+    await ref.add(
+      {
+        userId:auth().currentUser.uid,
+        expert:'Rakesh Panda',
+        imageUrl:'https://previews.123rf.com/images/stocking/stocking1303/stocking130300242/18665064-portrait-of-an-handsome-engineer.jpg'
+      }
+    )
+
+    SweetAlert.showAlertWithOptions({
+      title: 'Booking Received!',
+      subTitle: 'Thank you for booking with Rakesh Panda.',
+      style: 'success',
+    });
+  };
 
   return (
     <View style={{ margin: 15 }}>
@@ -17,7 +37,7 @@ const DesignExpert1 = () => {
           Personal Details
         </Text>
         <View style={styles.data}>
-          <Text style={{ color: 'black', fontSize: 18 }}>Mr Rakesh Panda</Text>
+          <Text style={{ color: 'black', fontSize: 18 }}>Rakesh Panda</Text>
           <Text style={{ color: 'black', fontSize: 15 }}>
             Designation: Interior Designer
           </Text>
@@ -57,7 +77,6 @@ const DesignExpert1 = () => {
       <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'center' }}>
         <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 18, bottom: 2, right: 5 }}>Rating:</Text>
         <AirbnbRating
-          defaultRating={3}
           selectedColor="#5B0888"
           defaultRating={4}
           reviewSize={14}
@@ -67,7 +86,7 @@ const DesignExpert1 = () => {
           isDisabled={true}
         />
       </View>
-      <TouchableOpacity style={styles.callme} >
+      <TouchableOpacity style={styles.callme} onPress={handleBookNow}>
         <Text style={{ color: '#fff', fontWeight: 'bold' }}>Book Now</Text>
       </TouchableOpacity>
     </View>

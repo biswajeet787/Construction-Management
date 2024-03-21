@@ -53,13 +53,6 @@ const HomeCardSlider = () => {
       subText: 'Browse through style options for different house elements',
       screen: 'StylesCard',
     },
-    {
-      iconName: 'hdd-o',
-      id: 10,
-      text: 'Solar Savings Calculator',
-      subText: 'Calculator to estimate solar potential and savings based',
-      screen: 'SolarSavingsCalculator',
-    },
   ];
   return (
     <View>

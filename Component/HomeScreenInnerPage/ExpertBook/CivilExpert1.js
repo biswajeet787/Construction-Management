@@ -1,9 +1,17 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { AirbnbRating } from 'react-native-elements';
+import SweetAlert from 'react-native-sweet-alert';
 
 const CivilExpert1 = () => {
-  
+
+  const handleBookNow = () => {
+    SweetAlert.showAlertWithOptions({
+      title: 'Booking Received!',
+      subTitle: 'Thank you for booking with Suryakanta Das.',
+      style: 'success',
+    });
+  };
 
   return (
     <View style={{ margin: 15 }}>
@@ -17,7 +25,7 @@ const CivilExpert1 = () => {
           Personal Details
         </Text>
         <View style={styles.data}>
-          <Text style={{ color: 'black', fontSize: 18 }}>Suryakanta  Das</Text>
+          <Text style={{ color: 'black', fontSize: 18 }}>Suryakanta Das</Text>
           <Text style={{ color: 'black', fontSize: 15 }}>
             Designation: Chief Engineer
           </Text>
@@ -67,7 +75,7 @@ const CivilExpert1 = () => {
           isDisabled={true}
         />
       </View>
-      <TouchableOpacity style={styles.callme} >
+      <TouchableOpacity style={styles.callme} onPress={handleBookNow}>
         <Text style={{ color: '#fff', fontWeight: 'bold' }}>Book Now</Text>
       </TouchableOpacity>
     </View>

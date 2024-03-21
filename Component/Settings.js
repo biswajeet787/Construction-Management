@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Alert, BackHandler } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the specific icon you downloaded
 import { useNavigation } from '@react-navigation/native';
-
+import auth from '@react-native-firebase/auth'; // Import auth from @react-native-firebase/auth
 
 const Settings= () => {
   const navigation = useNavigation();
@@ -23,7 +23,19 @@ const Settings= () => {
           onPress: () => console.log('Cancel Pressed'),
           style: 'cancel',
         },
-        { text: 'OK', onPress: () => console.log('OK Pressed') },
+        { 
+          text: 'OK', 
+          onPress: async () => {
+            try {
+              await auth().currentUser.delete(); // Delete the currently authenticated user
+              console.log('User account deleted successfully');
+              // Close the app
+              BackHandler.exitApp();
+            } catch (error) {
+              console.error('Error deleting user account:', error);
+            }
+          }
+        },
       ],
       { cancelable: false }
     );
@@ -49,7 +61,7 @@ const Settings= () => {
 
 const styles = StyleSheet.create({
   menu: {
-   backgroundColor: 'white',
+    backgroundColor: 'white',
     padding: 20,
     paddingBottom: 650,
   },

@@ -1,29 +1,19 @@
-import React, {useState} from 'react';
-import {
-  TextInput,
-  View,
-  StyleSheet,
-  Text,
-  Image,
-  TouchableOpacity,
-  FlatList,
-  ScrollView,
-} from 'react-native';
+import React, { useState } from 'react';
+import { TextInput, View, StyleSheet, Text, Image, TouchableOpacity, FlatList, ScrollView, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import ArticleForAll from '../ArticleForAll';
 
-const Article = ({show}) => {
+const Article = ({ show }) => {
   return (
     <View style={styles.articleContainer}>
       <View>
-      <Image source={show.image} resizeMode='contain'/>
+        <Image source={show.image} resizeMode='contain' />
       </View>
     </View>
   );
 };
 
 const MaterialSearch = () => {
-  let name='hiii';
   const data = [
     {
       id: 1,
@@ -51,73 +41,56 @@ const MaterialSearch = () => {
     },
     // Add more data objects for additional cards
   ];
+
+  const handleGetStarted = () => {
+    // Open Google search for nearest construction material
+    Linking.openURL('https://www.google.com/search?q=nearest+construction+material');
+  };
+
   return (
     <ScrollView>
-    <View style={{margin: 15, flex: 1}}>
-      <TouchableOpacity>
-      <View style={styles.container}>
-        <Text style={styles.text}>
-          Let us help you find the materials to build your home
-        </Text>
-        <View style={{flexDirection: 'row'}}>
-          <Text style={styles.text1}>
-            Find the best places in your {'\n'}area to buy materials for the
-            {'\n'}
-            construction of your home.
-          </Text>
-          <Image
-            source={require('../../image/rawMaterials.png')}
-            style={styles.rawMaterialsImage}
-          />
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <Text style={styles.text3}>GET STARTED </Text>
-          <Icon name="right" size={23} color="black" style={styles.arrow} />
-        </View>
-      </View>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <View style={styles.secondContainer}>
-          <Image
-            resizeMode="contain"
-            source={require('../../image/DLB.png')}
-            style={styles.rawMaterialsImage1}
-          />
-          <Text style={{fontSize: 14, color: 'black'}}>
-            Browse through DBL{'\n'}Building Produts
-          </Text>
-          <Icon name="right" size={18} color="orange" />
-        </View>
-      </TouchableOpacity>
-
-      {/* ARTICLES & VIEW ALL */}
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          marginTop: 10,
-        }}>
-        <Text style={{color: 'black', fontWeight: '900', fontSize: 17}}>
-          ARTICLES
-        </Text>
-        <TouchableOpacity>
-          <Text style={{color: 'orange', fontWeight: '900', fontSize: 17}}>
-            VIEW ALL
-          </Text>
+      <View style={{ margin: 15, flex: 1 }}>
+        <TouchableOpacity onPress={handleGetStarted}>
+          <View style={styles.container}>
+            <Text style={styles.text}>
+              Let us help you find the materials to build your home
+            </Text>
+            <View style={{ flexDirection: 'row' }}>
+              <Text style={styles.text1}>
+                Find the best places in your {'\n'}area to buy materials for the
+                {'\n'}
+                construction of your home.
+              </Text>
+              <Image
+                source={require('../../image/rawMaterials.png')}
+                style={styles.rawMaterialsImage}
+              />
+            </View>
+            <View style={{ flexDirection: 'row' }}>
+              <Text style={styles.text3}>GET STARTED </Text>
+              <Icon name="right" size={23} color="black" style={styles.arrow} />
+            </View>
+          </View>
         </TouchableOpacity>
-      </View>
-      <ArticleForAll />
-      
 
-        {/* <ScrollView horizontal>
-      <View style={{flexDirection: 'row',}}>
-        {data.map(item => (
-          <Article key={item.id} show={item}/>
-        ))}
+        {/* ARTICLES & VIEW ALL */}
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: 10,
+          }}>
+          <Text style={{ color: 'black', fontWeight: '900', fontSize: 17 }}>
+            ARTICLES
+          </Text>
+          <TouchableOpacity>
+            <Text style={{ color: 'orange', fontWeight: '900', fontSize: 17 }}>
+              VIEW ALL
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <ArticleForAll />
       </View>
-      </ScrollView> */}
-      {/* <Image source={require('../../image/DLB.png' )} style={{height:200,width:200}}/>  */}
-    </View>
     </ScrollView>
   );
 };
@@ -170,7 +143,7 @@ const styles = StyleSheet.create({
   },
   articles: {
     flexDirection: 'row',
-    
+
   },
   articleContainer: {
     // height:270,
@@ -179,7 +152,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     overflow: 'hidden',
-    margin:5
+    margin: 5
     // marginRight: 10,
   },
 });

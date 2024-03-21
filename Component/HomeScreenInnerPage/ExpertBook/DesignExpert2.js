@@ -1,9 +1,30 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { AirbnbRating } from 'react-native-elements';
+import SweetAlert from 'react-native-sweet-alert';
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
+
 
 const DesignExpert2 = () => {
   
+  const handleBookNow = async () => {
+
+    const ref= firestore().collection('bookings');
+    await ref.add(
+      {
+        userId:auth().currentUser.uid,
+        expert:'Amit Sahoo',
+        imageUrl:'https://previews.123rf.com/images/stocking/stocking1303/stocking130300242/18665064-portrait-of-an-handsome-engineer.jpg'
+      }
+    )
+
+    SweetAlert.showAlertWithOptions({
+      title: 'Booking Received!',
+      subTitle: 'Thank you for booking with Amit Sahoo.',
+      style: 'success',
+    });
+  };
 
   return (
     <View style={{ margin: 15 }}>
@@ -57,7 +78,7 @@ const DesignExpert2 = () => {
       <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'center' }}>
         <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 18, bottom: 2, right: 5 }}>Rating:</Text>
         <AirbnbRating
-          defaultRating={3}
+          
           selectedColor="#5B0888"
           defaultRating={4}
           reviewSize={14}
@@ -67,7 +88,7 @@ const DesignExpert2 = () => {
           isDisabled={true}
         />
       </View>
-      <TouchableOpacity style={styles.callme} >
+      <TouchableOpacity style={styles.callme} onPress={handleBookNow}>
         <Text style={{ color: '#fff', fontWeight: 'bold' }}>Book Now</Text>
       </TouchableOpacity>
     </View>

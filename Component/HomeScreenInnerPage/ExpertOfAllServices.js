@@ -31,7 +31,7 @@ const ExpertOfAllServices = () => {
                     color: 'black',
                     fontWeight: 'bold',
                   }}>
-                  Mr Jack{'\n'}
+                  Rakesh{'\n'}
                   <Text style={{fontWeight: '400'}}>Interior designer</Text>
                 </Text>
                 <TouchableOpacity onPress={()=>navigation.navigate('DesignExpert1')}>
